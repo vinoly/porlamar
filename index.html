@@ -1,0 +1,1616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Por La Mar — Brand Identity</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Jost:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    /* Foundation */
+    --cream:        #F5F0E8;
+    --parchment:    #EDE4D4;
+    --sand:         #D6C9B0;
+    --driftwood:    #9E8E75;
+    --bark:         #6B5C46;
+    --soil:         #3D2F20;
+    --ink:          #1A1108;
+    /* Road */
+    --highway:      #3A6B3C;
+    --highway-deep: #1F4A21;
+    /* Material */
+    --teak:         #8B5E3C;
+    --terracotta:   #A84B28;
+
+    --ff-display: 'Playfair Display', Georgia, serif;
+    --ff-body:    'Cormorant Garamond', Georgia, serif;
+    --ff-ui:      'Jost', sans-serif;
+
+    --page-max: 1200px;
+    --col-gutter: 48px;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background-color: var(--cream);
+    color: var(--ink);
+    font-family: var(--ff-body);
+    font-size: 18px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── NAV ───────────────────────────────────────────────────── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 48px;
+    background: var(--cream);
+    border-bottom: 1px solid var(--sand);
+  }
+
+  .nav-logo {
+    font-family: var(--ff-ui);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--bark);
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 40px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-family: var(--ff-ui);
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--driftwood);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--ink); }
+
+  /* ── HERO ──────────────────────────────────────────────────── */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 120px 48px 80px;
+    text-align: center;
+    border-bottom: 1px solid var(--sand);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 60% 40% at 20% 80%, rgba(158,142,117,0.12) 0%, transparent 70%),
+      radial-gradient(ellipse 50% 35% at 80% 20%, rgba(79,122,114,0.08) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  .hero-eyebrow {
+    font-family: var(--ff-ui);
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--driftwood);
+    margin-bottom: 48px;
+  }
+
+  .hero-logo-lockup {
+    width: 280px;
+    height: 280px;
+    margin: 0 auto 64px;
+    position: relative;
+  }
+
+  .hero-logo-lockup svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  .hero-title {
+    font-family: var(--ff-display);
+    font-size: clamp(28px, 3.5vw, 44px);
+    font-weight: 400;
+    font-style: italic;
+    color: var(--ink);
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    margin-bottom: 24px;
+  }
+
+  .hero-subtitle {
+    font-family: var(--ff-ui);
+    font-size: 12px;
+    font-weight: 300;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--driftwood);
+    margin-bottom: 80px;
+  }
+
+  .hero-divider {
+    width: 1px;
+    height: 64px;
+    background: var(--sand);
+    margin: 0 auto;
+  }
+
+  /* ── SECTIONS ──────────────────────────────────────────────── */
+  section {
+    max-width: var(--page-max);
+    margin: 0 auto;
+    padding: 120px var(--col-gutter);
+    border-bottom: 1px solid var(--sand);
+  }
+
+  section:last-child { border-bottom: none; }
+
+  .section-label {
+    font-family: var(--ff-ui);
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--driftwood);
+    margin-bottom: 64px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--sand);
+  }
+
+  .section-heading {
+    font-family: var(--ff-display);
+    font-size: clamp(36px, 4vw, 56px);
+    font-weight: 400;
+    line-height: 1.1;
+    color: var(--ink);
+    margin-bottom: 24px;
+  }
+
+  .section-body {
+    font-family: var(--ff-body);
+    font-size: 19px;
+    font-weight: 300;
+    color: var(--bark);
+    line-height: 1.75;
+    max-width: 600px;
+  }
+
+  /* ── TWO COLUMN LAYOUT ─────────────────────────────────────── */
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: start;
+    margin-top: 72px;
+  }
+
+  .three-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 48px;
+    margin-top: 72px;
+  }
+
+  /* ── LOGO SECTION ──────────────────────────────────────────── */
+  .logo-showcase {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+    margin-top: 72px;
+  }
+
+  .logo-cell {
+    padding: 80px 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+  }
+
+  .logo-cell svg { width: 160px; height: 160px; }
+
+  .logo-cell-label {
+    font-family: var(--ff-ui);
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--driftwood);
+  }
+
+  .bg-cream   { background: var(--cream); }
+  .bg-parchment { background: var(--parchment); }
+  .bg-ink     { background: var(--ink); }
+  .bg-sea     { background: var(--highway); }
+
+  /* ── EXCLUSION ZONES ─────────────────────────────────────────*/
+  .exclusion-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 64px;
+  }
+
+  .exclusion-card {
+    padding: 40px;
+    border: 1px solid var(--sand);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    background: var(--parchment);
+  }
+
+  .exclusion-card svg { width: 100px; height: 100px; opacity: 0.35; }
+
+  .exclusion-label {
+    font-family: var(--ff-ui);
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--terracotta);
+  }
+
+  /* ── COLOR SECTION ─────────────────────────────────────────── */
+  .color-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0;
+    margin-top: 72px;
+    border: 1px solid var(--sand);
+  }
+
+  .color-swatch {
+    aspect-ratio: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 20px;
+    position: relative;
+  }
+
+  .swatch-name {
+    font-family: var(--ff-ui);
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    line-height: 1.4;
+  }
+
+  .swatch-hex {
+    font-family: var(--ff-ui);
+    font-size: 10px;
+    font-weight: 300;
+    letter-spacing: 0.08em;
+    opacity: 0.65;
+    margin-top: 4px;
+  }
+
+  .swatch-role {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-family: var(--ff-ui);
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    opacity: 0.5;
+  }
+
+  /* accent row */
+  .color-accent-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+    margin-top: 2px;
+  }
+
+  .color-accent-cell {
+    padding: 28px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  /* ── TYPOGRAPHY ────────────────────────────────────────────── */
+  .type-specimen {
+    margin-top: 72px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+  }
+
+  .type-cell {
+    padding: 64px 56px;
+    background: var(--parchment);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 360px;
+  }
+
+  .type-meta {
+    font-family: var(--ff-ui);
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--driftwood);
+    margin-bottom: 32px;
+  }
+
+  .type-display-sample {
+    font-family: var(--ff-display);
+    font-size: 64px;
+    font-weight: 400;
+    font-style: italic;
+    color: var(--ink);
+    line-height: 1.05;
+    flex: 1;
+    display: flex;
+    align-items: center;
+  }
+
+  .type-ui-sample {
+    font-family: var(--ff-ui);
+    font-size: 13px;
+    font-weight: 300;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--bark);
+    flex: 1;
+    display: flex;
+    align-items: center;
+  }
+
+  .type-body-sample {
+    font-family: var(--ff-body);
+    font-size: 22px;
+    font-weight: 300;
+    color: var(--soil);
+    line-height: 1.65;
+    flex: 1;
+    display: flex;
+    align-items: center;
+  }
+
+  .type-scale-table {
+    margin-top: 64px;
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .type-scale-table td {
+    padding: 20px 0;
+    border-bottom: 1px solid var(--sand);
+    font-family: var(--ff-ui);
+    font-size: 12px;
+    color: var(--driftwood);
+    vertical-align: middle;
+  }
+
+  .type-scale-table .sample-col {
+    font-size: inherit;
+    color: var(--ink);
+    padding-right: 40px;
+  }
+
+  /* ── BRAND VOICE ───────────────────────────────────────────── */
+  .voice-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+    margin-top: 72px;
+  }
+
+  .voice-card {
+    padding: 56px 48px;
+    background: var(--parchment);
+  }
+
+  .voice-card-title {
+    font-family: var(--ff-display);
+    font-size: 28px;
+    font-weight: 400;
+    font-style: italic;
+    color: var(--ink);
+    margin-bottom: 20px;
+  }
+
+  .voice-card-body {
+    font-family: var(--ff-body);
+    font-size: 17px;
+    font-weight: 300;
+    color: var(--bark);
+    line-height: 1.75;
+    margin-bottom: 32px;
+  }
+
+  .voice-examples {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .voice-example {
+    font-family: var(--ff-ui);
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    padding: 14px 18px;
+    border-left: 2px solid var(--sand);
+    color: var(--soil);
+  }
+
+  .voice-example.do { border-color: var(--highway); color: var(--highway-light); }
+  .voice-example.dont { border-color: var(--terracotta); color: var(--terracotta); text-decoration-color: var(--terracotta); }
+
+  /* ── USAGE: DO / DON'T ─────────────────────────────────────── */
+  .do-dont-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+    margin-top: 72px;
+  }
+
+  .do-cell, .dont-cell {
+    padding: 48px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .do-cell { background: var(--parchment); }
+  .dont-cell { background: #EEE5D8; }
+
+  .do-label {
+    font-family: var(--ff-ui);
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--highway);
+  }
+
+  .dont-label {
+    font-family: var(--ff-ui);
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--terracotta);
+  }
+
+  /* ── APPLICATIONS ───────────────────────────────────────────── */
+  .app-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+    margin-top: 72px;
+  }
+
+  .app-mockup {
+    background: var(--parchment);
+    padding: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 400px;
+  }
+
+  .app-desc {
+    padding: 48px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .app-title {
+    font-family: var(--ff-display);
+    font-size: 28px;
+    font-style: italic;
+    color: var(--ink);
+  }
+
+  .app-body {
+    font-family: var(--ff-body);
+    font-size: 17px;
+    font-weight: 300;
+    color: var(--bark);
+    line-height: 1.7;
+  }
+
+  /* membership card mockup */
+  .membership-card {
+    width: 360px;
+    height: 236px;
+    background: var(--ink);
+    border-radius: 8px;
+    padding: 24px 28px 22px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .membership-card::before {
+    content: '';
+    position: absolute;
+    right: -40px;
+    top: -40px;
+    width: 200px;
+    height: 200px;
+    border: 1px solid rgba(214,201,176,0.15);
+    border-radius: 50%;
+  }
+
+  .membership-card::after {
+    content: '';
+    position: absolute;
+    right: -80px;
+    top: -80px;
+    width: 300px;
+    height: 300px;
+    border: 1px solid rgba(214,201,176,0.08);
+    border-radius: 50%;
+  }
+
+  .card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .card-mark {
+    font-family: var(--ff-ui);
+    font-size: 8px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: rgba(214,201,176,0.5);
+  }
+
+  .card-tier {
+    font-family: var(--ff-ui);
+    font-size: 8px;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--driftwood);
+    border: 1px solid rgba(158,142,117,0.35);
+    padding: 5px 10px;
+  }
+
+  .card-name {
+    font-family: var(--ff-display);
+    font-size: 22px;
+    font-weight: 400;
+    color: var(--cream);
+    font-style: italic;
+  }
+
+  .card-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .card-member-label {
+    font-family: var(--ff-ui);
+    font-size: 8px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(214,201,176,0.4);
+    margin-bottom: 4px;
+  }
+
+  .card-member-name {
+    font-family: var(--ff-ui);
+    font-size: 12px;
+    font-weight: 300;
+    letter-spacing: 0.1em;
+    color: var(--cream);
+  }
+
+  .card-number {
+    font-family: var(--ff-ui);
+    font-size: 11px;
+    font-weight: 300;
+    letter-spacing: 0.18em;
+    color: rgba(214,201,176,0.45);
+  }
+
+  /* signage mockup */
+  .signage-mock {
+    width: 240px;
+    background: #F2EDE4;
+    border: 1px solid var(--sand);
+    padding: 40px 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+  }
+
+  .signage-logo { width: 100px; height: 100px; }
+
+  .signage-address {
+    font-family: var(--ff-ui);
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--driftwood);
+    text-align: center;
+    line-height: 2;
+  }
+
+  .signage-divider {
+    width: 32px;
+    height: 1px;
+    background: var(--sand);
+  }
+
+  /* ── PHOTO DIRECTION ────────────────────────────────────────── */
+  .photo-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 4px;
+    height: 520px;
+    margin-top: 72px;
+  }
+
+  .photo-cell {
+    position: relative;
+    overflow: hidden;
+    background: #1A1A14;
+    width: 100%;
+    height: 100%;
+  }
+
+  .photo-cell.span-col { grid-row: 1 / 3; }
+
+  .photo-cell-tag {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    font-family: var(--ff-ui);
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--driftwood);
+  }
+
+  .photo-cell svg { opacity: 0.3; }
+
+  /* ── ICON / MARK ────────────────────────────────────────────── */
+  .mark-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2px;
+    margin-top: 72px;
+  }
+
+  .mark-cell {
+    padding: 48px 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    background: var(--parchment);
+  }
+
+  .mark-cell-label {
+    font-family: var(--ff-ui);
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--driftwood);
+  }
+
+  /* ── QUOTE BLOCK ────────────────────────────────────────────── */
+  .quote-block {
+    max-width: 900px;
+    margin: 80px auto 0;
+    text-align: center;
+    padding: 80px 48px;
+    border-top: 1px solid var(--sand);
+    border-bottom: 1px solid var(--sand);
+  }
+
+  .quote-mark {
+    font-family: var(--ff-display);
+    font-size: 80px;
+    color: var(--sand);
+    line-height: 0.5;
+    margin-bottom: 40px;
+  }
+
+  .quote-text {
+    font-family: var(--ff-display);
+    font-size: clamp(24px, 3vw, 38px);
+    font-weight: 400;
+    font-style: italic;
+    color: var(--ink);
+    line-height: 1.4;
+    margin-bottom: 40px;
+  }
+
+  .quote-attr {
+    font-family: var(--ff-ui);
+    font-size: 10px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--driftwood);
+  }
+
+  /* ── FOOTER ─────────────────────────────────────────────────── */
+  footer {
+    padding: 60px var(--col-gutter);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid var(--sand);
+    max-width: var(--page-max);
+    margin: 0 auto;
+  }
+
+  .footer-logo {
+    font-family: var(--ff-ui);
+    font-size: 10px;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--driftwood);
+  }
+
+  .footer-copy {
+    font-family: var(--ff-ui);
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    color: var(--sand);
+  }
+
+  /* ── UTILITY ────────────────────────────────────────────────── */
+  .mt-8  { margin-top: 8px; }
+  .mt-16 { margin-top: 16px; }
+  .mt-24 { margin-top: 24px; }
+  .mt-40 { margin-top: 40px; }
+  .mt-64 { margin-top: 64px; }
+
+  .pill {
+    display: inline-block;
+    font-family: var(--ff-ui);
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    border: 1px solid currentColor;
+  }
+
+  .pill-highway { color: var(--highway); }
+  .pill-rust { color: var(--terracotta); }
+  .pill-bark { color: var(--bark); }
+
+  /* body type ramp */
+  .t-hero    { font-family: var(--ff-display); font-size: 72px; font-weight: 400; font-style: italic; line-height: 1.05; }
+  .t-h1      { font-family: var(--ff-display); font-size: 52px; font-weight: 400; line-height: 1.1; }
+  .t-h2      { font-family: var(--ff-display); font-size: 36px; font-weight: 400; font-style: italic; line-height: 1.15; }
+  .t-h3      { font-family: var(--ff-display); font-size: 24px; font-weight: 400; line-height: 1.25; }
+  .t-body    { font-family: var(--ff-body); font-size: 19px; font-weight: 300; line-height: 1.7; }
+  .t-caption { font-family: var(--ff-ui); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; }
+  .t-ui      { font-family: var(--ff-ui); font-size: 12px; font-weight: 400; letter-spacing: 0.06em; }
+
+  @media (max-width: 900px) {
+    nav { padding: 16px 24px; }
+    .nav-links { display: none; }
+    section { padding: 80px 24px; }
+    .two-col, .three-col, .logo-showcase, .voice-grid,
+    .do-dont-grid, .app-row, .type-specimen { grid-template-columns: 1fr; }
+    .color-grid { grid-template-columns: repeat(3, 1fr); }
+    .mark-grid { grid-template-columns: repeat(2, 1fr); }
+    .exclusion-grid { grid-template-columns: 1fr 1fr; }
+    .photo-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 4px;
+    height: 520px;
+    margin-top: 72px;
+  }
+    .photo-cell.span-col { grid-row: auto; }
+    footer { flex-direction: column; gap: 20px; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <span class="nav-logo">Por La Mar — Brand Identity</span>
+  <ul class="nav-links">
+    <li><a href="#logo">Logo</a></li>
+    <li><a href="#color">Color</a></li>
+    <li><a href="#typography">Typography</a></li>
+    <li><a href="#voice">Voice</a></li>
+    <li><a href="#applications">Applications</a></li>
+    <li><a href="#photography">Photography</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <p class="hero-eyebrow">Brand Identity System · 2025</p>
+
+  <!-- Logo SVG inline reproduction -->
+  <div class="hero-logo-lockup">
+    <svg viewBox="0 0 665.21 665.21" width="220" height="220" xmlns="http://www.w3.org/2000/svg" ><g>
+      <path fill="#1A1108" d="M227.61,189.98l-8,5.8c-2.46,1.78-3.01,5.23-1.23,7.7l17.85,24.61c1.78,2.46,1.24,5.91-1.23,7.7l-8.46,6.14c-2.46,1.78-5.91,1.24-7.7-1.23l-75.3-103.82c-1.79-2.46-1.24-5.91,1.23-7.7l25.38-18.41c42.61-30.9,100.21,48.2,57.45,79.21ZM183.07,127.93l-8.31,6.02c-2.46,1.78-3.01,5.23-1.23,7.7l25.77,35.53c1.79,2.46,5.23,3.01,7.7,1.23l8.31-6.02c19.23-13.94-12.55-58.73-32.24-44.45Z"/>
+      <path fill="#1A1108" d="M288.88,175.65c-8.01-12.02-12.48-28.28-12.81-47.28s3.55-35.6,11.12-47.71c9.24-14.8,23.16-22.65,40.45-22.96,17.29-.31,31.48,7.04,41.24,21.5,8,11.83,12.48,28.28,12.82,47.28.34,19-3.55,35.41-11.12,47.71-9.24,14.61-23.16,22.46-40.45,22.76-17.29.31-31.48-7.04-41.24-21.31ZM297.53,127.99c.2,11.21,3.14,48.02,32.2,47.5,29.07-.52,30.69-37.41,30.49-48.62-.2-11.4-3.14-48.21-32.21-47.69-29.07.52-30.69,37.41-30.48,48.81Z"/>
+      <path fill="#1A1108" d="M460.85,195.11c-2.28.23-4.08,1.74-4.69,3.88l-11.01,38.49c-1.04,3.7-5.43,5.22-8.66,2.88l-8.77-6.36c-2-1.45-2.8-3.91-2.19-6.05l10.08-34.94c.61-2.14-.19-4.6-2.19-6.05-1.23-.89-3.08-2.23-6.15-4.46-2.46-1.78-5.91-1.24-7.69,1.23l-17.85,24.61c-1.78,2.46-5.23,3.01-7.7,1.23l-8.46-6.13c-2.46-1.78-3.01-5.23-1.23-7.7l75.29-103.82c1.78-2.46,5.23-3.01,7.7-1.23l25.38,18.4c34.45,24.99,3.74,81.57-31.87,86.02ZM438.66,157.43c-1.79,2.46-1.24,5.91,1.23,7.7l8.31,6.02c19.23,13.94,51.92-30.17,32.24-44.45l-8.31-6.02c-2.46-1.78-5.91-1.24-7.69,1.23l-25.77,35.53Z"/>
+    </g>
+    <g>
+      <path fill="#1A1108" d="M303.86,476.79c2.52,1.7,3.35,5.23,1.55,7.91l-71.36,106.1c-1.8,2.68-5.39,3.25-7.91,1.55l-8.51-5.73c-2.52-1.7-3.19-5.12-1.39-7.8l34.25-50.92c.64-.95.38-2.26-.3-2.95-.84-.79-2.1-.96-3.06-.22l-55.12,40.09c-1.9,1.47-4.64,1.46-6.54.18l-12.3-8.27c-2.05-1.38-2.94-3.81-2.29-6.12l16.34-66.17c.32-1.16-.31-2.27-1.36-2.75-1.05-.48-2.21-.11-2.85.83l-34.25,50.92c-1.8,2.68-5.39,3.25-7.91,1.55l-8.36-5.62c-2.68-1.8-3.35-5.23-1.55-7.91l71.36-106.1c1.8-2.68,5.23-3.35,7.91-1.55,2.68,1.8,6.15,4.14,10.88,7.32,2.05,1.38,2.94,3.81,2.29,6.12l-25.07,101.28c-.21,1,.25,2,1.04,2.53s1.89.59,2.58-.09l84.35-61.42c2.06-1.36,4.64-1.46,6.54-.18,4.89,3.29,8.2,5.51,11.04,7.42Z"/>
+      <path fill="#1A1108" d="M391.41,598.13c-1.11-2.73-3.04-7.47-6.39-15.86-1.06-2.36-3.35-3.79-5.99-3.46l-30.16,3.78c-2.64.33-4.5,2.29-4.95,4.83-.85,7-1.65,12.84-2.28,16.94-.45,2.55-2.31,4.5-4.76,4.81l-10.75,1.35c-3.58.45-6.65-2.61-6.15-6.31,4.04-28.85,15.19-109.52,18.2-131.34.26-2.52,2.31-4.5,4.76-4.81l13.57-1.7c2.45-.31,4.93,1.11,5.8,3.49,52.31,128.63,39.78,97.46,50.04,122.79,1.39,3.46-.82,7.19-4.4,7.64l-10.75,1.35c-2.45.31-4.74-1.13-5.8-3.49ZM354.69,560.22l13.2-1.65c3.58-.45,5.8-4.17,4.4-7.64-2.76-6.74-6.04-14.56-9.62-23.3-2-5.3-9.92-4.31-10.56,1.32-1.25,8.39-2.3,16.76-3.58,24.96-.49,3.7,2.57,6.76,6.15,6.31Z"/>
+      <path fill="#1A1108" d="M495.88,487.73c-.31,2.27.74,4.37,2.67,5.46l34.85,19.69c3.36,1.88,3.81,6.49.78,9.09l-8.23,7.04c-1.88,1.61-4.45,1.81-6.39.72l-31.62-17.95c-1.94-1.09-4.51-.89-6.39.72-1.15.99-2.89,2.47-5.77,4.94-2.31,1.98-2.58,5.46-.6,7.77l19.77,23.1c1.98,2.31,1.71,5.79-.6,7.77l-7.94,6.79c-2.31,1.98-5.79,1.71-7.77-.6l-83.39-97.43c-1.98-2.31-1.71-5.79.6-7.77l23.82-20.38c32.33-27.67,80.19,15.39,76.21,51.06ZM454.05,500.52c1.98,2.31,5.46,2.58,7.77.6l7.79-6.67c18.04-15.44-17.22-57.53-35.7-41.72l-7.79,6.67c-2.31,1.98-2.58,5.46-.6,7.77l28.54,33.34Z"/>
+    </g>
+    <g>
+      <path fill="#1A1108" d="M294.8,387.65c3.04,0,5.51,2.47,5.51,5.51v10.45c0,3.04-2.47,5.51-5.51,5.51h-52.44c-3.04,0-5.51-2.47-5.51-5.51v-128.25c0-3.04,2.47-5.51,5.51-5.51h10.45c3.04,0,5.51,2.47,5.51,5.51v106.78c0,3.04,2.47,5.51,5.51,5.51h30.97Z"/>
+      <path fill="#1A1108" d="M406.52,404.94c-.76-2.85-2.09-7.79-4.37-16.53-.76-2.47-2.85-4.18-5.51-4.18h-30.4c-2.66,0-4.75,1.71-5.51,4.18-1.71,6.84-3.23,12.54-4.37,16.53-.76,2.47-2.85,4.18-5.32,4.18h-10.83c-3.61,0-6.27-3.42-5.32-7.03,7.6-28.12,28.69-106.78,34.39-128.06.57-2.47,2.85-4.18,5.32-4.18h13.68c2.47,0,4.75,1.71,5.32,4.18,35.91,134.14,27.36,101.65,34.39,128.06.95,3.61-1.71,7.03-5.32,7.03h-10.83c-2.47,0-4.56-1.71-5.32-4.18ZM374.78,362.76h13.3c3.61,0,6.27-3.42,5.32-7.03-1.9-7.03-4.18-15.2-6.65-24.32-1.33-5.51-9.31-5.51-10.64,0-2.28,8.17-4.37,16.34-6.65,24.32-.95,3.61,1.71,7.03,5.32,7.03Z"/>
+    </g>
+    <circle stroke="#1A1108" fill="none" stroke-miterlimit="10" stroke-width="21.91" cx="332.6" cy="332.6" r="321.65"/></svg>
+  </div>
+
+  <h1 class="hero-title">By the sea.<br>For the road.</h1>
+
+  >
+  <p class="hero-subtitle">Santa Barbara · Est. 2025</p>
+  <div class="hero-divider"></div>
+</div>
+
+<!-- SECTION: BRAND FOUNDATION -->
+<section>
+  <p class="section-label">01 — Foundation</p>
+  <div class="two-col">
+    <div>
+      <h2 class="section-heading">A club built on<br>shared horizons.</h2>
+      <p class="section-body mt-24">
+        Por La Mar — "by the sea" in old Castilian — is a luxury car club rooted in the landscape and spirit of Santa Barbara. It is a place where exceptional automobiles meet genuine community. Not a velvet rope; a shoreline.
+      </p>
+      <p class="section-body mt-24">
+        The brand draws from the architecture of the California Riviera: white stucco walls, exposed timber beams, terracotta tile, and salt-bleached wood. Materials that hold history without announcing it.
+      </p>
+    </div>
+    <div>
+      <div style="padding: 56px 48px; background: var(--parchment);">
+        <p style="font-family: var(--ff-display); font-size: 14px; font-style: italic; color: var(--driftwood); margin-bottom: 40px;">Brand Pillars</p>
+        <div style="display: flex; flex-direction: column; gap: 28px;">
+          <div>
+            <p style="font-family: var(--ff-ui); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--highway); margin-bottom: 8px;">Community</p>
+            <p style="font-family: var(--ff-body); font-size: 16px; font-weight: 300; color: var(--soil); line-height: 1.6;">Rooted in Santa Barbara. Open to all who love the drive.</p>
+          </div>
+          <div style="height: 1px; background: var(--sand);"></div>
+          <div>
+            <p style="font-family: var(--ff-ui); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--highway); margin-bottom: 8px;">Grounded Luxury</p>
+            <p style="font-family: var(--ff-body); font-size: 16px; font-weight: 300; color: var(--soil); line-height: 1.6;">Refined taste without pretension. The good life, lived simply.</p>
+          </div>
+          <div style="height: 1px; background: var(--sand);"></div>
+          <div>
+            <p style="font-family: var(--ff-ui); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--highway); margin-bottom: 8px;">Place</p>
+            <p style="font-family: var(--ff-body); font-size: 16px; font-weight: 300; color: var(--soil); line-height: 1.6;">Santa Barbara is not a backdrop. It is the point.</p>
+          </div>
+          <div style="height: 1px; background: var(--sand);"></div>
+          <div>
+            <p style="font-family: var(--ff-ui); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--highway); margin-bottom: 8px;">The Drive</p>
+            <p style="font-family: var(--ff-body); font-size: 16px; font-weight: 300; color: var(--soil); line-height: 1.6;">Machines are meant to be used. Routes, rallies, and real roads.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION: LOGO -->
+<section id="logo">
+  <p class="section-label">02 — The Mark</p>
+  <div class="two-col" style="align-items: end;">
+    <div>
+      <h2 class="section-heading">Circle &amp; Word.</h2>
+      <p class="section-body mt-24">
+        The mark is drawn from the medallion seals of old Spanish colonial charters — a circle containing place and purpose. The hand-drawn geometry of the letterforms suggests craft and care; neither digital precision nor casual irregularity.
+      </p>
+      <p class="section-body mt-24">
+        The three-line stacking of <em>POR · LA · MAR</em> creates a visual tension: the word arcs of POR and MAR echo the circle, while LA anchors the center — a horizon line between sky and sea.
+      </p>
+    </div>
+    <div style="padding: 48px; background: var(--parchment);">
+      <p style="font-family: var(--ff-ui); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--driftwood); margin-bottom: 32px;">Mark Anatomy</p>
+      <svg viewBox="0 0 665.21 665.21" width="100%" xmlns="http://www.w3.org/2000/svg">
+      <!-- exclusion zone dashed ring -->
+      <circle cx="332.6" cy="332.6" r="370" stroke="#D6C9B0" stroke-width="1.5" stroke-dasharray="6 8" fill="none"/>
+      <!-- annotation lines -->
+      <line x1="332.6" y1="5" x2="332.6" y2="50" stroke="#9E8E75" stroke-width="1"/>
+      <line x1="332.6" y1="615" x2="332.6" y2="660" stroke="#9E8E75" stroke-width="1"/>
+      <text font-family="'Jost', sans-serif" font-size="22" fill="#9E8E75" letter-spacing="4" text-anchor="middle" x="332.6" y="0">OUTER RING</text>
+      <!-- center crosshair -->
+      <line x1="317" y1="332.6" x2="348" y2="332.6" stroke="#9E8E75" stroke-width="1.5"/>
+      <line x1="332.6" y1="317" x2="332.6" y2="348" stroke="#9E8E75" stroke-width="1.5"/>
+      <!-- real logo -->
+      <g>
+      <path fill="#1A1108" d="M227.61,189.98l-8,5.8c-2.46,1.78-3.01,5.23-1.23,7.7l17.85,24.61c1.78,2.46,1.24,5.91-1.23,7.7l-8.46,6.14c-2.46,1.78-5.91,1.24-7.7-1.23l-75.3-103.82c-1.79-2.46-1.24-5.91,1.23-7.7l25.38-18.41c42.61-30.9,100.21,48.2,57.45,79.21ZM183.07,127.93l-8.31,6.02c-2.46,1.78-3.01,5.23-1.23,7.7l25.77,35.53c1.79,2.46,5.23,3.01,7.7,1.23l8.31-6.02c19.23-13.94-12.55-58.73-32.24-44.45Z"/>
+      <path fill="#1A1108" d="M288.88,175.65c-8.01-12.02-12.48-28.28-12.81-47.28s3.55-35.6,11.12-47.71c9.24-14.8,23.16-22.65,40.45-22.96,17.29-.31,31.48,7.04,41.24,21.5,8,11.83,12.48,28.28,12.82,47.28.34,19-3.55,35.41-11.12,47.71-9.24,14.61-23.16,22.46-40.45,22.76-17.29.31-31.48-7.04-41.24-21.31ZM297.53,127.99c.2,11.21,3.14,48.02,32.2,47.5,29.07-.52,30.69-37.41,30.49-48.62-.2-11.4-3.14-48.21-32.21-47.69-29.07.52-30.69,37.41-30.48,48.81Z"/>
+      <path fill="#1A1108" d="M460.85,195.11c-2.28.23-4.08,1.74-4.69,3.88l-11.01,38.49c-1.04,3.7-5.43,5.22-8.66,2.88l-8.77-6.36c-2-1.45-2.8-3.91-2.19-6.05l10.08-34.94c.61-2.14-.19-4.6-2.19-6.05-1.23-.89-3.08-2.23-6.15-4.46-2.46-1.78-5.91-1.24-7.69,1.23l-17.85,24.61c-1.78,2.46-5.23,3.01-7.7,1.23l-8.46-6.13c-2.46-1.78-3.01-5.23-1.23-7.7l75.29-103.82c1.78-2.46,5.23-3.01,7.7-1.23l25.38,18.4c34.45,24.99,3.74,81.57-31.87,86.02ZM438.66,157.43c-1.79,2.46-1.24,5.91,1.23,7.7l8.31,6.02c19.23,13.94,51.92-30.17,32.24-44.45l-8.31-6.02c-2.46-1.78-5.91-1.24-7.69,1.23l-25.77,35.53Z"/>
+    </g>
+    <g>
+      <path fill="#1A1108" d="M303.86,476.79c2.52,1.7,3.35,5.23,1.55,7.91l-71.36,106.1c-1.8,2.68-5.39,3.25-7.91,1.55l-8.51-5.73c-2.52-1.7-3.19-5.12-1.39-7.8l34.25-50.92c.64-.95.38-2.26-.3-2.95-.84-.79-2.1-.96-3.06-.22l-55.12,40.09c-1.9,1.47-4.64,1.46-6.54.18l-12.3-8.27c-2.05-1.38-2.94-3.81-2.29-6.12l16.34-66.17c.32-1.16-.31-2.27-1.36-2.75-1.05-.48-2.21-.11-2.85.83l-34.25,50.92c-1.8,2.68-5.39,3.25-7.91,1.55l-8.36-5.62c-2.68-1.8-3.35-5.23-1.55-7.91l71.36-106.1c1.8-2.68,5.23-3.35,7.91-1.55,2.68,1.8,6.15,4.14,10.88,7.32,2.05,1.38,2.94,3.81,2.29,6.12l-25.07,101.28c-.21,1,.25,2,1.04,2.53s1.89.59,2.58-.09l84.35-61.42c2.06-1.36,4.64-1.46,6.54-.18,4.89,3.29,8.2,5.51,11.04,7.42Z"/>
+      <path fill="#1A1108" d="M391.41,598.13c-1.11-2.73-3.04-7.47-6.39-15.86-1.06-2.36-3.35-3.79-5.99-3.46l-30.16,3.78c-2.64.33-4.5,2.29-4.95,4.83-.85,7-1.65,12.84-2.28,16.94-.45,2.55-2.31,4.5-4.76,4.81l-10.75,1.35c-3.58.45-6.65-2.61-6.15-6.31,4.04-28.85,15.19-109.52,18.2-131.34.26-2.52,2.31-4.5,4.76-4.81l13.57-1.7c2.45-.31,4.93,1.11,5.8,3.49,52.31,128.63,39.78,97.46,50.04,122.79,1.39,3.46-.82,7.19-4.4,7.64l-10.75,1.35c-2.45.31-4.74-1.13-5.8-3.49ZM354.69,560.22l13.2-1.65c3.58-.45,5.8-4.17,4.4-7.64-2.76-6.74-6.04-14.56-9.62-23.3-2-5.3-9.92-4.31-10.56,1.32-1.25,8.39-2.3,16.76-3.58,24.96-.49,3.7,2.57,6.76,6.15,6.31Z"/>
+      <path fill="#1A1108" d="M495.88,487.73c-.31,2.27.74,4.37,2.67,5.46l34.85,19.69c3.36,1.88,3.81,6.49.78,9.09l-8.23,7.04c-1.88,1.61-4.45,1.81-6.39.72l-31.62-17.95c-1.94-1.09-4.51-.89-6.39.72-1.15.99-2.89,2.47-5.77,4.94-2.31,1.98-2.58,5.46-.6,7.77l19.77,23.1c1.98,2.31,1.71,5.79-.6,7.77l-7.94,6.79c-2.31,1.98-5.79,1.71-7.77-.6l-83.39-97.43c-1.98-2.31-1.71-5.79.6-7.77l23.82-20.38c32.33-27.67,80.19,15.39,76.21,51.06ZM454.05,500.52c1.98,2.31,5.46,2.58,7.77.6l7.79-6.67c18.04-15.44-17.22-57.53-35.7-41.72l-7.79,6.67c-2.31,1.98-2.58,5.46-.6,7.77l28.54,33.34Z"/>
+    </g>
+    <g>
+      <path fill="#1A1108" d="M294.8,387.65c3.04,0,5.51,2.47,5.51,5.51v10.45c0,3.04-2.47,5.51-5.51,5.51h-52.44c-3.04,0-5.51-2.47-5.51-5.51v-128.25c0-3.04,2.47-5.51,5.51-5.51h10.45c3.04,0,5.51,2.47,5.51,5.51v106.78c0,3.04,2.47,5.51,5.51,5.51h30.97Z"/>
+      <path fill="#1A1108" d="M406.52,404.94c-.76-2.85-2.09-7.79-4.37-16.53-.76-2.47-2.85-4.18-5.51-4.18h-30.4c-2.66,0-4.75,1.71-5.51,4.18-1.71,6.84-3.23,12.54-4.37,16.53-.76,2.47-2.85,4.18-5.32,4.18h-10.83c-3.61,0-6.27-3.42-5.32-7.03,7.6-28.12,28.69-106.78,34.39-128.06.57-2.47,2.85-4.18,5.32-4.18h13.68c2.47,0,4.75,1.71,5.32,4.18,35.91,134.14,27.36,101.65,34.39,128.06.95,3.61-1.71,7.03-5.32,7.03h-10.83c-2.47,0-4.56-1.71-5.32-4.18ZM374.78,362.76h13.3c3.61,0,6.27-3.42,5.32-7.03-1.9-7.03-4.18-15.2-6.65-24.32-1.33-5.51-9.31-5.51-10.64,0-2.28,8.17-4.37,16.34-6.65,24.32-.95,3.61,1.71,7.03,5.32,7.03Z"/>
+    </g>
+    <circle stroke="#1A1108" fill="none" stroke-miterlimit="10" stroke-width="21.91" cx="332.6" cy="332.6" r="321.65"/>
+    </svg>
+    </div>
+  </div>
+
+  <!-- Logo on backgrounds -->
+  <div class="logo-showcase">
+    <div class="logo-cell bg-cream">
+      <svg viewBox="0 0 665.21 665.21" width="160" height="160" xmlns="http://www.w3.org/2000/svg" ><g>
+      <path fill="#1A1108" d="M227.61,189.98l-8,5.8c-2.46,1.78-3.01,5.23-1.23,7.7l17.85,24.61c1.78,2.46,1.24,5.91-1.23,7.7l-8.46,6.14c-2.46,1.78-5.91,1.24-7.7-1.23l-75.3-103.82c-1.79-2.46-1.24-5.91,1.23-7.7l25.38-18.41c42.61-30.9,100.21,48.2,57.45,79.21ZM183.07,127.93l-8.31,6.02c-2.46,1.78-3.01,5.23-1.23,7.7l25.77,35.53c1.79,2.46,5.23,3.01,7.7,1.23l8.31-6.02c19.23-13.94-12.55-58.73-32.24-44.45Z"/>
+      <path fill="#1A1108" d="M288.88,175.65c-8.01-12.02-12.48-28.28-12.81-47.28s3.55-35.6,11.12-47.71c9.24-14.8,23.16-22.65,40.45-22.96,17.29-.31,31.48,7.04,41.24,21.5,8,11.83,12.48,28.28,12.82,47.28.34,19-3.55,35.41-11.12,47.71-9.24,14.61-23.16,22.46-40.45,22.76-17.29.31-31.48-7.04-41.24-21.31ZM297.53,127.99c.2,11.21,3.14,48.02,32.2,47.5,29.07-.52,30.69-37.41,30.49-48.62-.2-11.4-3.14-48.21-32.21-47.69-29.07.52-30.69,37.41-30.48,48.81Z"/>
+      <path fill="#1A1108" d="M460.85,195.11c-2.28.23-4.08,1.74-4.69,3.88l-11.01,38.49c-1.04,3.7-5.43,5.22-8.66,2.88l-8.77-6.36c-2-1.45-2.8-3.91-2.19-6.05l10.08-34.94c.61-2.14-.19-4.6-2.19-6.05-1.23-.89-3.08-2.23-6.15-4.46-2.46-1.78-5.91-1.24-7.69,1.23l-17.85,24.61c-1.78,2.46-5.23,3.01-7.7,1.23l-8.46-6.13c-2.46-1.78-3.01-5.23-1.23-7.7l75.29-103.82c1.78-2.46,5.23-3.01,7.7-1.23l25.38,18.4c34.45,24.99,3.74,81.57-31.87,86.02ZM438.66,157.43c-1.79,2.46-1.24,5.91,1.23,7.7l8.31,6.02c19.23,13.94,51.92-30.17,32.24-44.45l-8.31-6.02c-2.46-1.78-5.91-1.24-7.69,1.23l-25.77,35.53Z"/>
+    </g>
+    <g>
+      <path fill="#1A1108" d="M303.86,476.79c2.52,1.7,3.35,5.23,1.55,7.91l-71.36,106.1c-1.8,2.68-5.39,3.25-7.91,1.55l-8.51-5.73c-2.52-1.7-3.19-5.12-1.39-7.8l34.25-50.92c.64-.95.38-2.26-.3-2.95-.84-.79-2.1-.96-3.06-.22l-55.12,40.09c-1.9,1.47-4.64,1.46-6.54.18l-12.3-8.27c-2.05-1.38-2.94-3.81-2.29-6.12l16.34-66.17c.32-1.16-.31-2.27-1.36-2.75-1.05-.48-2.21-.11-2.85.83l-34.25,50.92c-1.8,2.68-5.39,3.25-7.91,1.55l-8.36-5.62c-2.68-1.8-3.35-5.23-1.55-7.91l71.36-106.1c1.8-2.68,5.23-3.35,7.91-1.55,2.68,1.8,6.15,4.14,10.88,7.32,2.05,1.38,2.94,3.81,2.29,6.12l-25.07,101.28c-.21,1,.25,2,1.04,2.53s1.89.59,2.58-.09l84.35-61.42c2.06-1.36,4.64-1.46,6.54-.18,4.89,3.29,8.2,5.51,11.04,7.42Z"/>
+      <path fill="#1A1108" d="M391.41,598.13c-1.11-2.73-3.04-7.47-6.39-15.86-1.06-2.36-3.35-3.79-5.99-3.46l-30.16,3.78c-2.64.33-4.5,2.29-4.95,4.83-.85,7-1.65,12.84-2.28,16.94-.45,2.55-2.31,4.5-4.76,4.81l-10.75,1.35c-3.58.45-6.65-2.61-6.15-6.31,4.04-28.85,15.19-109.52,18.2-131.34.26-2.52,2.31-4.5,4.76-4.81l13.57-1.7c2.45-.31,4.93,1.11,5.8,3.49,52.31,128.63,39.78,97.46,50.04,122.79,1.39,3.46-.82,7.19-4.4,7.64l-10.75,1.35c-2.45.31-4.74-1.13-5.8-3.49ZM354.69,560.22l13.2-1.65c3.58-.45,5.8-4.17,4.4-7.64-2.76-6.74-6.04-14.56-9.62-23.3-2-5.3-9.92-4.31-10.56,1.32-1.25,8.39-2.3,16.76-3.58,24.96-.49,3.7,2.57,6.76,6.15,6.31Z"/>
+      <path fill="#1A1108" d="M495.88,487.73c-.31,2.27.74,4.37,2.67,5.46l34.85,19.69c3.36,1.88,3.81,6.49.78,9.09l-8.23,7.04c-1.88,1.61-4.45,1.81-6.39.72l-31.62-17.95c-1.94-1.09-4.51-.89-6.39.72-1.15.99-2.89,2.47-5.77,4.94-2.31,1.98-2.58,5.46-.6,7.77l19.77,23.1c1.98,2.31,1.71,5.79-.6,7.77l-7.94,6.79c-2.31,1.98-5.79,1.71-7.77-.6l-83.39-97.43c-1.98-2.31-1.71-5.79.6-7.77l23.82-20.38c32.33-27.67,80.19,15.39,76.21,51.06ZM454.05,500.52c1.98,2.31,5.46,2.58,7.77.6l7.79-6.67c18.04-15.44-17.22-57.53-35.7-41.72l-7.79,6.67c-2.31,1.98-2.58,5.46-.6,7.77l28.54,33.34Z"/>
+    </g>
+    <g>
+      <path fill="#1A1108" d="M294.8,387.65c3.04,0,5.51,2.47,5.51,5.51v10.45c0,3.04-2.47,5.51-5.51,5.51h-52.44c-3.04,0-5.51-2.47-5.51-5.51v-128.25c0-3.04,2.47-5.51,5.51-5.51h10.45c3.04,0,5.51,2.47,5.51,5.51v106.78c0,3.04,2.47,5.51,5.51,5.51h30.97Z"/>
+      <path fill="#1A1108" d="M406.52,404.94c-.76-2.85-2.09-7.79-4.37-16.53-.76-2.47-2.85-4.18-5.51-4.18h-30.4c-2.66,0-4.75,1.71-5.51,4.18-1.71,6.84-3.23,12.54-4.37,16.53-.76,2.47-2.85,4.18-5.32,4.18h-10.83c-3.61,0-6.27-3.42-5.32-7.03,7.6-28.12,28.69-106.78,34.39-128.06.57-2.47,2.85-4.18,5.32-4.18h13.68c2.47,0,4.75,1.71,5.32,4.18,35.91,134.14,27.36,101.65,34.39,128.06.95,3.61-1.71,7.03-5.32,7.03h-10.83c-2.47,0-4.56-1.71-5.32-4.18ZM374.78,362.76h13.3c3.61,0,6.27-3.42,5.32-7.03-1.9-7.03-4.18-15.2-6.65-24.32-1.33-5.51-9.31-5.51-10.64,0-2.28,8.17-4.37,16.34-6.65,24.32-.95,3.61,1.71,7.03,5.32,7.03Z"/>
+    </g>
+    <circle stroke="#1A1108" fill="none" stroke-miterlimit="10" stroke-width="21.91" cx="332.6" cy="332.6" r="321.65"/></svg>
+      <span class="logo-cell-label">Primary · Cream</span>
+    </div>
+    <div class="logo-cell bg-parchment">
+      <svg viewBox="0 0 665.21 665.21" width="160" height="160" xmlns="http://www.w3.org/2000/svg" ><g>
+      <path fill="#1A1108" d="M227.61,189.98l-8,5.8c-2.46,1.78-3.01,5.23-1.23,7.7l17.85,24.61c1.78,2.46,1.24,5.91-1.23,7.7l-8.46,6.14c-2.46,1.78-5.91,1.24-7.7-1.23l-75.3-103.82c-1.79-2.46-1.24-5.91,1.23-7.7l25.38-18.41c42.61-30.9,100.21,48.2,57.45,79.21ZM183.07,127.93l-8.31,6.02c-2.46,1.78-3.01,5.23-1.23,7.7l25.77,35.53c1.79,2.46,5.23,3.01,7.7,1.23l8.31-6.02c19.23-13.94-12.55-58.73-32.24-44.45Z"/>
+      <path fill="#1A1108" d="M288.88,175.65c-8.01-12.02-12.48-28.28-12.81-47.28s3.55-35.6,11.12-47.71c9.24-14.8,23.16-22.65,40.45-22.96,17.29-.31,31.48,7.04,41.24,21.5,8,11.83,12.48,28.28,12.82,47.28.34,19-3.55,35.41-11.12,47.71-9.24,14.61-23.16,22.46-40.45,22.76-17.29.31-31.48-7.04-41.24-21.31ZM297.53,127.99c.2,11.21,3.14,48.02,32.2,47.5,29.07-.52,30.69-37.41,30.49-48.62-.2-11.4-3.14-48.21-32.21-47.69-29.07.52-30.69,37.41-30.48,48.81Z"/>
+      <path fill="#1A1108" d="M460.85,195.11c-2.28.23-4.08,1.74-4.69,3.88l-11.01,38.49c-1.04,3.7-5.43,5.22-8.66,2.88l-8.77-6.36c-2-1.45-2.8-3.91-2.19-6.05l10.08-34.94c.61-2.14-.19-4.6-2.19-6.05-1.23-.89-3.08-2.23-6.15-4.46-2.46-1.78-5.91-1.24-7.69,1.23l-17.85,24.61c-1.78,2.46-5.23,3.01-7.7,1.23l-8.46-6.13c-2.46-1.78-3.01-5.23-1.23-7.7l75.29-103.82c1.78-2.46,5.23-3.01,7.7-1.23l25.38,18.4c34.45,24.99,3.74,81.57-31.87,86.02ZM438.66,157.43c-1.79,2.46-1.24,5.91,1.23,7.7l8.31,6.02c19.23,13.94,51.92-30.17,32.24-44.45l-8.31-6.02c-2.46-1.78-5.91-1.24-7.69,1.23l-25.77,35.53Z"/>
+    </g>
+    <g>
+      <path fill="#1A1108" d="M303.86,476.79c2.52,1.7,3.35,5.23,1.55,7.91l-71.36,106.1c-1.8,2.68-5.39,3.25-7.91,1.55l-8.51-5.73c-2.52-1.7-3.19-5.12-1.39-7.8l34.25-50.92c.64-.95.38-2.26-.3-2.95-.84-.79-2.1-.96-3.06-.22l-55.12,40.09c-1.9,1.47-4.64,1.46-6.54.18l-12.3-8.27c-2.05-1.38-2.94-3.81-2.29-6.12l16.34-66.17c.32-1.16-.31-2.27-1.36-2.75-1.05-.48-2.21-.11-2.85.83l-34.25,50.92c-1.8,2.68-5.39,3.25-7.91,1.55l-8.36-5.62c-2.68-1.8-3.35-5.23-1.55-7.91l71.36-106.1c1.8-2.68,5.23-3.35,7.91-1.55,2.68,1.8,6.15,4.14,10.88,7.32,2.05,1.38,2.94,3.81,2.29,6.12l-25.07,101.28c-.21,1,.25,2,1.04,2.53s1.89.59,2.58-.09l84.35-61.42c2.06-1.36,4.64-1.46,6.54-.18,4.89,3.29,8.2,5.51,11.04,7.42Z"/>
+      <path fill="#1A1108" d="M391.41,598.13c-1.11-2.73-3.04-7.47-6.39-15.86-1.06-2.36-3.35-3.79-5.99-3.46l-30.16,3.78c-2.64.33-4.5,2.29-4.95,4.83-.85,7-1.65,12.84-2.28,16.94-.45,2.55-2.31,4.5-4.76,4.81l-10.75,1.35c-3.58.45-6.65-2.61-6.15-6.31,4.04-28.85,15.19-109.52,18.2-131.34.26-2.52,2.31-4.5,4.76-4.81l13.57-1.7c2.45-.31,4.93,1.11,5.8,3.49,52.31,128.63,39.78,97.46,50.04,122.79,1.39,3.46-.82,7.19-4.4,7.64l-10.75,1.35c-2.45.31-4.74-1.13-5.8-3.49ZM354.69,560.22l13.2-1.65c3.58-.45,5.8-4.17,4.4-7.64-2.76-6.74-6.04-14.56-9.62-23.3-2-5.3-9.92-4.31-10.56,1.32-1.25,8.39-2.3,16.76-3.58,24.96-.49,3.7,2.57,6.76,6.15,6.31Z"/>
+      <path fill="#1A1108" d="M495.88,487.73c-.31,2.27.74,4.37,2.67,5.46l34.85,19.69c3.36,1.88,3.81,6.49.78,9.09l-8.23,7.04c-1.88,1.61-4.45,1.81-6.39.72l-31.62-17.95c-1.94-1.09-4.51-.89-6.39.72-1.15.99-2.89,2.47-5.77,4.94-2.31,1.98-2.58,5.46-.6,7.77l19.77,23.1c1.98,2.31,1.71,5.79-.6,7.77l-7.94,6.79c-2.31,1.98-5.79,1.71-7.77-.6l-83.39-97.43c-1.98-2.31-1.71-5.79.6-7.77l23.82-20.38c32.33-27.67,80.19,15.39,76.21,51.06ZM454.05,500.52c1.98,2.31,5.46,2.58,7.77.6l7.79-6.67c18.04-15.44-17.22-57.53-35.7-41.72l-7.79,6.67c-2.31,1.98-2.58,5.46-.6,7.77l28.54,33.34Z"/>
+    </g>
+    <g>
+      <path fill="#1A1108" d="M294.8,387.65c3.04,0,5.51,2.47,5.51,5.51v10.45c0,3.04-2.47,5.51-5.51,5.51h-52.44c-3.04,0-5.51-2.47-5.51-5.51v-128.25c0-3.04,2.47-5.51,5.51-5.51h10.45c3.04,0,5.51,2.47,5.51,5.51v106.78c0,3.04,2.47,5.51,5.51,5.51h30.97Z"/>
+      <path fill="#1A1108" d="M406.52,404.94c-.76-2.85-2.09-7.79-4.37-16.53-.76-2.47-2.85-4.18-5.51-4.18h-30.4c-2.66,0-4.75,1.71-5.51,4.18-1.71,6.84-3.23,12.54-4.37,16.53-.76,2.47-2.85,4.18-5.32,4.18h-10.83c-3.61,0-6.27-3.42-5.32-7.03,7.6-28.12,28.69-106.78,34.39-128.06.57-2.47,2.85-4.18,5.32-4.18h13.68c2.47,0,4.75,1.71,5.32,4.18,35.91,134.14,27.36,101.65,34.39,128.06.95,3.61-1.71,7.03-5.32,7.03h-10.83c-2.47,0-4.56-1.71-5.32-4.18ZM374.78,362.76h13.3c3.61,0,6.27-3.42,5.32-7.03-1.9-7.03-4.18-15.2-6.65-24.32-1.33-5.51-9.31-5.51-10.64,0-2.28,8.17-4.37,16.34-6.65,24.32-.95,3.61,1.71,7.03,5.32,7.03Z"/>
+    </g>
+    <circle stroke="#1A1108" fill="none" stroke-miterlimit="10" stroke-width="21.91" cx="332.6" cy="332.6" r="321.65"/></svg>
+      <span class="logo-cell-label">Secondary · Parchment</span>
+    </div>
+    <div class="logo-cell bg-ink">
+      <svg viewBox="0 0 665.21 665.21" width="160" height="160" xmlns="http://www.w3.org/2000/svg" ><g>
+      <path fill="#F5F0E8" d="M227.61,189.98l-8,5.8c-2.46,1.78-3.01,5.23-1.23,7.7l17.85,24.61c1.78,2.46,1.24,5.91-1.23,7.7l-8.46,6.14c-2.46,1.78-5.91,1.24-7.7-1.23l-75.3-103.82c-1.79-2.46-1.24-5.91,1.23-7.7l25.38-18.41c42.61-30.9,100.21,48.2,57.45,79.21ZM183.07,127.93l-8.31,6.02c-2.46,1.78-3.01,5.23-1.23,7.7l25.77,35.53c1.79,2.46,5.23,3.01,7.7,1.23l8.31-6.02c19.23-13.94-12.55-58.73-32.24-44.45Z"/>
+      <path fill="#F5F0E8" d="M288.88,175.65c-8.01-12.02-12.48-28.28-12.81-47.28s3.55-35.6,11.12-47.71c9.24-14.8,23.16-22.65,40.45-22.96,17.29-.31,31.48,7.04,41.24,21.5,8,11.83,12.48,28.28,12.82,47.28.34,19-3.55,35.41-11.12,47.71-9.24,14.61-23.16,22.46-40.45,22.76-17.29.31-31.48-7.04-41.24-21.31ZM297.53,127.99c.2,11.21,3.14,48.02,32.2,47.5,29.07-.52,30.69-37.41,30.49-48.62-.2-11.4-3.14-48.21-32.21-47.69-29.07.52-30.69,37.41-30.48,48.81Z"/>
+      <path fill="#F5F0E8" d="M460.85,195.11c-2.28.23-4.08,1.74-4.69,3.88l-11.01,38.49c-1.04,3.7-5.43,5.22-8.66,2.88l-8.77-6.36c-2-1.45-2.8-3.91-2.19-6.05l10.08-34.94c.61-2.14-.19-4.6-2.19-6.05-1.23-.89-3.08-2.23-6.15-4.46-2.46-1.78-5.91-1.24-7.69,1.23l-17.85,24.61c-1.78,2.46-5.23,3.01-7.7,1.23l-8.46-6.13c-2.46-1.78-3.01-5.23-1.23-7.7l75.29-103.82c1.78-2.46,5.23-3.01,7.7-1.23l25.38,18.4c34.45,24.99,3.74,81.57-31.87,86.02ZM438.66,157.43c-1.79,2.46-1.24,5.91,1.23,7.7l8.31,6.02c19.23,13.94,51.92-30.17,32.24-44.45l-8.31-6.02c-2.46-1.78-5.91-1.24-7.69,1.23l-25.77,35.53Z"/>
+    </g>
+    <g>
+      <path fill="#F5F0E8" d="M303.86,476.79c2.52,1.7,3.35,5.23,1.55,7.91l-71.36,106.1c-1.8,2.68-5.39,3.25-7.91,1.55l-8.51-5.73c-2.52-1.7-3.19-5.12-1.39-7.8l34.25-50.92c.64-.95.38-2.26-.3-2.95-.84-.79-2.1-.96-3.06-.22l-55.12,40.09c-1.9,1.47-4.64,1.46-6.54.18l-12.3-8.27c-2.05-1.38-2.94-3.81-2.29-6.12l16.34-66.17c.32-1.16-.31-2.27-1.36-2.75-1.05-.48-2.21-.11-2.85.83l-34.25,50.92c-1.8,2.68-5.39,3.25-7.91,1.55l-8.36-5.62c-2.68-1.8-3.35-5.23-1.55-7.91l71.36-106.1c1.8-2.68,5.23-3.35,7.91-1.55,2.68,1.8,6.15,4.14,10.88,7.32,2.05,1.38,2.94,3.81,2.29,6.12l-25.07,101.28c-.21,1,.25,2,1.04,2.53s1.89.59,2.58-.09l84.35-61.42c2.06-1.36,4.64-1.46,6.54-.18,4.89,3.29,8.2,5.51,11.04,7.42Z"/>
+      <path fill="#F5F0E8" d="M391.41,598.13c-1.11-2.73-3.04-7.47-6.39-15.86-1.06-2.36-3.35-3.79-5.99-3.46l-30.16,3.78c-2.64.33-4.5,2.29-4.95,4.83-.85,7-1.65,12.84-2.28,16.94-.45,2.55-2.31,4.5-4.76,4.81l-10.75,1.35c-3.58.45-6.65-2.61-6.15-6.31,4.04-28.85,15.19-109.52,18.2-131.34.26-2.52,2.31-4.5,4.76-4.81l13.57-1.7c2.45-.31,4.93,1.11,5.8,3.49,52.31,128.63,39.78,97.46,50.04,122.79,1.39,3.46-.82,7.19-4.4,7.64l-10.75,1.35c-2.45.31-4.74-1.13-5.8-3.49ZM354.69,560.22l13.2-1.65c3.58-.45,5.8-4.17,4.4-7.64-2.76-6.74-6.04-14.56-9.62-23.3-2-5.3-9.92-4.31-10.56,1.32-1.25,8.39-2.3,16.76-3.58,24.96-.49,3.7,2.57,6.76,6.15,6.31Z"/>
+      <path fill="#F5F0E8" d="M495.88,487.73c-.31,2.27.74,4.37,2.67,5.46l34.85,19.69c3.36,1.88,3.81,6.49.78,9.09l-8.23,7.04c-1.88,1.61-4.45,1.81-6.39.72l-31.62-17.95c-1.94-1.09-4.51-.89-6.39.72-1.15.99-2.89,2.47-5.77,4.94-2.31,1.98-2.58,5.46-.6,7.77l19.77,23.1c1.98,2.31,1.71,5.79-.6,7.77l-7.94,6.79c-2.31,1.98-5.79,1.71-7.77-.6l-83.39-97.43c-1.98-2.31-1.71-5.79.6-7.77l23.82-20.38c32.33-27.67,80.19,15.39,76.21,51.06ZM454.05,500.52c1.98,2.31,5.46,2.58,7.77.6l7.79-6.67c18.04-15.44-17.22-57.53-35.7-41.72l-7.79,6.67c-2.31,1.98-2.58,5.46-.6,7.77l28.54,33.34Z"/>
+    </g>
+    <g>
+      <path fill="#F5F0E8" d="M294.8,387.65c3.04,0,5.51,2.47,5.51,5.51v10.45c0,3.04-2.47,5.51-5.51,5.51h-52.44c-3.04,0-5.51-2.47-5.51-5.51v-128.25c0-3.04,2.47-5.51,5.51-5.51h10.45c3.04,0,5.51,2.47,5.51,5.51v106.78c0,3.04,2.47,5.51,5.51,5.51h30.97Z"/>
+      <path fill="#F5F0E8" d="M406.52,404.94c-.76-2.85-2.09-7.79-4.37-16.53-.76-2.47-2.85-4.18-5.51-4.18h-30.4c-2.66,0-4.75,1.71-5.51,4.18-1.71,6.84-3.23,12.54-4.37,16.53-.76,2.47-2.85,4.18-5.32,4.18h-10.83c-3.61,0-6.27-3.42-5.32-7.03,7.6-28.12,28.69-106.78,34.39-128.06.57-2.47,2.85-4.18,5.32-4.18h13.68c2.47,0,4.75,1.71,5.32,4.18,35.91,134.14,27.36,101.65,34.39,128.06.95,3.61-1.71,7.03-5.32,7.03h-10.83c-2.47,0-4.56-1.71-5.32-4.18ZM374.78,362.76h13.3c3.61,0,6.27-3.42,5.32-7.03-1.9-7.03-4.18-15.2-6.65-24.32-1.33-5.51-9.31-5.51-10.64,0-2.28,8.17-4.37,16.34-6.65,24.32-.95,3.61,1.71,7.03,5.32,7.03Z"/>
+    </g>
+    <circle stroke="#F5F0E8" fill="none" stroke-miterlimit="10" stroke-width="21.91" cx="332.6" cy="332.6" r="321.65"/></svg>
+      <span class="logo-cell-label" style="color: #9E8E75;">Reversed · Ink</span>
+    </div>
+    <div class="logo-cell bg-sea">
+      <svg viewBox="0 0 665.21 665.21" width="160" height="160" xmlns="http://www.w3.org/2000/svg" ><g>
+      <path fill="#F5F0E8" d="M227.61,189.98l-8,5.8c-2.46,1.78-3.01,5.23-1.23,7.7l17.85,24.61c1.78,2.46,1.24,5.91-1.23,7.7l-8.46,6.14c-2.46,1.78-5.91,1.24-7.7-1.23l-75.3-103.82c-1.79-2.46-1.24-5.91,1.23-7.7l25.38-18.41c42.61-30.9,100.21,48.2,57.45,79.21ZM183.07,127.93l-8.31,6.02c-2.46,1.78-3.01,5.23-1.23,7.7l25.77,35.53c1.79,2.46,5.23,3.01,7.7,1.23l8.31-6.02c19.23-13.94-12.55-58.73-32.24-44.45Z"/>
+      <path fill="#F5F0E8" d="M288.88,175.65c-8.01-12.02-12.48-28.28-12.81-47.28s3.55-35.6,11.12-47.71c9.24-14.8,23.16-22.65,40.45-22.96,17.29-.31,31.48,7.04,41.24,21.5,8,11.83,12.48,28.28,12.82,47.28.34,19-3.55,35.41-11.12,47.71-9.24,14.61-23.16,22.46-40.45,22.76-17.29.31-31.48-7.04-41.24-21.31ZM297.53,127.99c.2,11.21,3.14,48.02,32.2,47.5,29.07-.52,30.69-37.41,30.49-48.62-.2-11.4-3.14-48.21-32.21-47.69-29.07.52-30.69,37.41-30.48,48.81Z"/>
+      <path fill="#F5F0E8" d="M460.85,195.11c-2.28.23-4.08,1.74-4.69,3.88l-11.01,38.49c-1.04,3.7-5.43,5.22-8.66,2.88l-8.77-6.36c-2-1.45-2.8-3.91-2.19-6.05l10.08-34.94c.61-2.14-.19-4.6-2.19-6.05-1.23-.89-3.08-2.23-6.15-4.46-2.46-1.78-5.91-1.24-7.69,1.23l-17.85,24.61c-1.78,2.46-5.23,3.01-7.7,1.23l-8.46-6.13c-2.46-1.78-3.01-5.23-1.23-7.7l75.29-103.82c1.78-2.46,5.23-3.01,7.7-1.23l25.38,18.4c34.45,24.99,3.74,81.57-31.87,86.02ZM438.66,157.43c-1.79,2.46-1.24,5.91,1.23,7.7l8.31,6.02c19.23,13.94,51.92-30.17,32.24-44.45l-8.31-6.02c-2.46-1.78-5.91-1.24-7.69,1.23l-25.77,35.53Z"/>
+    </g>
+    <g>
+      <path fill="#F5F0E8" d="M303.86,476.79c2.52,1.7,3.35,5.23,1.55,7.91l-71.36,106.1c-1.8,2.68-5.39,3.25-7.91,1.55l-8.51-5.73c-2.52-1.7-3.19-5.12-1.39-7.8l34.25-50.92c.64-.95.38-2.26-.3-2.95-.84-.79-2.1-.96-3.06-.22l-55.12,40.09c-1.9,1.47-4.64,1.46-6.54.18l-12.3-8.27c-2.05-1.38-2.94-3.81-2.29-6.12l16.34-66.17c.32-1.16-.31-2.27-1.36-2.75-1.05-.48-2.21-.11-2.85.83l-34.25,50.92c-1.8,2.68-5.39,3.25-7.91,1.55l-8.36-5.62c-2.68-1.8-3.35-5.23-1.55-7.91l71.36-106.1c1.8-2.68,5.23-3.35,7.91-1.55,2.68,1.8,6.15,4.14,10.88,7.32,2.05,1.38,2.94,3.81,2.29,6.12l-25.07,101.28c-.21,1,.25,2,1.04,2.53s1.89.59,2.58-.09l84.35-61.42c2.06-1.36,4.64-1.46,6.54-.18,4.89,3.29,8.2,5.51,11.04,7.42Z"/>
+      <path fill="#F5F0E8" d="M391.41,598.13c-1.11-2.73-3.04-7.47-6.39-15.86-1.06-2.36-3.35-3.79-5.99-3.46l-30.16,3.78c-2.64.33-4.5,2.29-4.95,4.83-.85,7-1.65,12.84-2.28,16.94-.45,2.55-2.31,4.5-4.76,4.81l-10.75,1.35c-3.58.45-6.65-2.61-6.15-6.31,4.04-28.85,15.19-109.52,18.2-131.34.26-2.52,2.31-4.5,4.76-4.81l13.57-1.7c2.45-.31,4.93,1.11,5.8,3.49,52.31,128.63,39.78,97.46,50.04,122.79,1.39,3.46-.82,7.19-4.4,7.64l-10.75,1.35c-2.45.31-4.74-1.13-5.8-3.49ZM354.69,560.22l13.2-1.65c3.58-.45,5.8-4.17,4.4-7.64-2.76-6.74-6.04-14.56-9.62-23.3-2-5.3-9.92-4.31-10.56,1.32-1.25,8.39-2.3,16.76-3.58,24.96-.49,3.7,2.57,6.76,6.15,6.31Z"/>
+      <path fill="#F5F0E8" d="M495.88,487.73c-.31,2.27.74,4.37,2.67,5.46l34.85,19.69c3.36,1.88,3.81,6.49.78,9.09l-8.23,7.04c-1.88,1.61-4.45,1.81-6.39.72l-31.62-17.95c-1.94-1.09-4.51-.89-6.39.72-1.15.99-2.89,2.47-5.77,4.94-2.31,1.98-2.58,5.46-.6,7.77l19.77,23.1c1.98,2.31,1.71,5.79-.6,7.77l-7.94,6.79c-2.31,1.98-5.79,1.71-7.77-.6l-83.39-97.43c-1.98-2.31-1.71-5.79.6-7.77l23.82-20.38c32.33-27.67,80.19,15.39,76.21,51.06ZM454.05,500.52c1.98,2.31,5.46,2.58,7.77.6l7.79-6.67c18.04-15.44-17.22-57.53-35.7-41.72l-7.79,6.67c-2.31,1.98-2.58,5.46-.6,7.77l28.54,33.34Z"/>
+    </g>
+    <g>
+      <path fill="#F5F0E8" d="M294.8,387.65c3.04,0,5.51,2.47,5.51,5.51v10.45c0,3.04-2.47,5.51-5.51,5.51h-52.44c-3.04,0-5.51-2.47-5.51-5.51v-128.25c0-3.04,2.47-5.51,5.51-5.51h10.45c3.04,0,5.51,2.47,5.51,5.51v106.78c0,3.04,2.47,5.51,5.51,5.51h30.97Z"/>
+      <path fill="#F5F0E8" d="M406.52,404.94c-.76-2.85-2.09-7.79-4.37-16.53-.76-2.47-2.85-4.18-5.51-4.18h-30.4c-2.66,0-4.75,1.71-5.51,4.18-1.71,6.84-3.23,12.54-4.37,16.53-.76,2.47-2.85,4.18-5.32,4.18h-10.83c-3.61,0-6.27-3.42-5.32-7.03,7.6-28.12,28.69-106.78,34.39-128.06.57-2.47,2.85-4.18,5.32-4.18h13.68c2.47,0,4.75,1.71,5.32,4.18,35.91,134.14,27.36,101.65,34.39,128.06.95,3.61-1.71,7.03-5.32,7.03h-10.83c-2.47,0-4.56-1.71-5.32-4.18ZM374.78,362.76h13.3c3.61,0,6.27-3.42,5.32-7.03-1.9-7.03-4.18-15.2-6.65-24.32-1.33-5.51-9.31-5.51-10.64,0-2.28,8.17-4.37,16.34-6.65,24.32-.95,3.61,1.71,7.03,5.32,7.03Z"/>
+    </g>
+    <circle stroke="#F5F0E8" fill="none" stroke-miterlimit="10" stroke-width="21.91" cx="332.6" cy="332.6" r="321.65"/></svg>
+      <span class="logo-cell-label" style="color: rgba(245,240,232,0.55);">Accent · Sea</span>
+    </div>
+  </div>
+
+  <!-- DO / DON'T -->
+  <div class="do-dont-grid">
+    <div class="do-cell">
+      <p class="do-label">✓ Do</p>
+      <ul style="font-family: var(--ff-body); font-size: 16px; font-weight: 300; color: var(--soil); line-height: 2; padding-left: 20px;">
+        <li>Use the mark at legible sizes (80px+ digital, 1in+ print)</li>
+        <li>Apply only on approved background colors</li>
+        <li>Maintain clear zone equal to the mark's radius on all sides</li>
+        <li>Scale proportionally and uniformly</li>
+        <li>Use reversed (cream) version on all dark and mid-tone backgrounds</li>
+      </ul>
+    </div>
+    <div class="dont-cell">
+      <p class="dont-label">✗ Do not</p>
+      <ul style="font-family: var(--ff-body); font-size: 16px; font-weight: 300; color: var(--terracotta); line-height: 2; padding-left: 20px;">
+        <li>Stretch, skew, or distort the mark</li>
+        <li>Apply the mark over busy photography without a containment field</li>
+        <li>Recreate or modify the letterforms</li>
+        <li>Use outline-only versions of the mark</li>
+        <li>Add drop shadows, glows, or visual effects</li>
+        <li>Place the ink version on dark backgrounds</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION: COLOR -->
+<section id="color">
+  <p class="section-label">03 — Color</p>
+  <h2 class="section-heading">Earth, road, and stucco.</h2>
+  <p class="section-body mt-24">
+    The palette is drawn entirely from the physical world of Santa Barbara: bleached adobe walls, aged teak beams, fired clay roof tile, and the deep institutional green of the California Route 1 highway shield. Warm naturals anchor the system; the material accents give it life.
+  </p>
+
+  <!-- Primary palette: 5 neutrals -->
+  <div class="color-grid" style="margin-top: 72px;">
+    <div class="color-swatch" style="background: #F5F0E8;">
+      <span class="swatch-role" style="color: #6B5C46;">Foundation</span>
+      <span class="swatch-name" style="color: #3D2F20;">Cream</span>
+      <span class="swatch-hex" style="color: #6B5C46;">#F5F0E8</span>
+    </div>
+    <div class="color-swatch" style="background: #EDE4D4;">
+      <span class="swatch-role" style="color: #6B5C46;">Foundation</span>
+      <span class="swatch-name" style="color: #3D2F20;">Parchment</span>
+      <span class="swatch-hex" style="color: #6B5C46;">#EDE4D4</span>
+    </div>
+    <div class="color-swatch" style="background: #D6C9B0;">
+      <span class="swatch-role" style="color: #6B5C46;">Foundation</span>
+      <span class="swatch-name" style="color: #3D2F20;">Sand</span>
+      <span class="swatch-hex" style="color: #6B5C46;">#D6C9B0</span>
+    </div>
+    <div class="color-swatch" style="background: #9E8E75;">
+      <span class="swatch-role" style="color: rgba(245,240,232,0.55);">Foundation</span>
+      <span class="swatch-name" style="color: #1A1108;">Driftwood</span>
+      <span class="swatch-hex" style="color: rgba(245,240,232,0.55);">#9E8E75</span>
+    </div>
+    <div class="color-swatch" style="background: #1A1108;">
+      <span class="swatch-role" style="color: #6B5C46;">Foundation</span>
+      <span class="swatch-name" style="color: #EDE4D4;">Ink</span>
+      <span class="swatch-hex" style="color: #6B5C46;">#1A1108</span>
+    </div>
+  </div>
+
+  <!-- Accent palette: 3 pairs, each on its own row -->
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2px; margin-top: 2px;">
+    <div style="padding: 32px 28px; background: #3A6B3C; display: flex; flex-direction: column; gap: 6px;">
+      <span style="font-family: var(--ff-ui); font-size: 9px; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(245,240,232,0.45);">Road</span>
+      <span style="font-family: var(--ff-ui); font-size: 13px; font-weight: 500; color: #F5F0E8; letter-spacing: 0.06em;">Highway</span>
+      <span style="font-family: var(--ff-ui); font-size: 10px; color: rgba(245,240,232,0.4);">#3A6B3C</span>
+      <span style="font-family: var(--ff-body); font-size: 13px; font-weight: 300; color: rgba(245,240,232,0.6); margin-top: 6px; font-style: italic; line-height: 1.55;">CA Route 1 shield green. CTAs, interactive elements, rally signage, route markers.</span>
+    </div>
+    <div style="padding: 32px 28px; background: #1F4A21; display: flex; flex-direction: column; gap: 6px;">
+      <span style="font-family: var(--ff-ui); font-size: 9px; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(245,240,232,0.45);">Road</span>
+      <span style="font-family: var(--ff-ui); font-size: 13px; font-weight: 500; color: #F5F0E8; letter-spacing: 0.06em;">Highway Deep</span>
+      <span style="font-family: var(--ff-ui); font-size: 10px; color: rgba(245,240,232,0.4);">#1F4A21</span>
+      <span style="font-family: var(--ff-body); font-size: 13px; font-weight: 300; color: rgba(245,240,232,0.6); margin-top: 6px; font-style: italic; line-height: 1.55;">Darker variant. Hover states, pressed elements, deep backgrounds.</span>
+    </div>
+  </div>
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2px; margin-top: 2px;">
+    <div style="padding: 32px 28px; background: #8B5E3C; display: flex; flex-direction: column; gap: 6px;">
+      <span style="font-family: var(--ff-ui); font-size: 9px; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(245,240,232,0.45);">Material</span>
+      <span style="font-family: var(--ff-ui); font-size: 13px; font-weight: 500; color: #F5F0E8; letter-spacing: 0.06em;">Teak</span>
+      <span style="font-family: var(--ff-ui); font-size: 10px; color: rgba(245,240,232,0.4);">#8B5E3C</span>
+      <span style="font-family: var(--ff-body); font-size: 13px; font-weight: 300; color: rgba(245,240,232,0.6); margin-top: 6px; font-style: italic; line-height: 1.55;">Exposed beams, interior wood trim. Warm accent on neutral surfaces.</span>
+    </div>
+    <div style="padding: 32px 28px; background: #A84B28; display: flex; flex-direction: column; gap: 6px;">
+      <span style="font-family: var(--ff-ui); font-size: 9px; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(245,240,232,0.45);">Material</span>
+      <span style="font-family: var(--ff-ui); font-size: 13px; font-weight: 500; color: #F5F0E8; letter-spacing: 0.06em;">Terracotta</span>
+      <span style="font-family: var(--ff-ui); font-size: 10px; color: rgba(245,240,232,0.4);">#A84B28</span>
+      <span style="font-family: var(--ff-body); font-size: 13px; font-weight: 300; color: rgba(245,240,232,0.6); margin-top: 6px; font-style: italic; line-height: 1.55;">Fired clay roof tile. Seasonal use, events, warm moments.</span>
+    </div>
+  </div>
+
+  <!-- Usage + Pairings -->
+  <div class="two-col mt-64">
+    <div>
+      <p style="font-family: var(--ff-ui); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--driftwood); margin-bottom: 32px;">Usage Hierarchy</p>
+      <div style="display: flex; flex-direction: column; gap: 0;">
+        <div style="padding: 18px 24px; background: #F5F0E8; border: 1px solid var(--sand); display: flex; justify-content: space-between; align-items: center;">
+          <span style="font-family: var(--ff-ui); font-size: 11px; color: var(--bark);">Page backgrounds, large fields</span>
+          <span style="font-family: var(--ff-ui); font-size: 10px; letter-spacing: 0.14em; color: var(--driftwood);">Cream · Parchment</span>
+        </div>
+        <div style="padding: 18px 24px; background: #D6C9B0; border: 1px solid var(--sand); border-top: none; display: flex; justify-content: space-between; align-items: center;">
+          <span style="font-family: var(--ff-ui); font-size: 11px; color: var(--soil);">Dividers, borders, subtle containers</span>
+          <span style="font-family: var(--ff-ui); font-size: 10px; letter-spacing: 0.14em; color: var(--soil);">Sand</span>
+        </div>
+        <div style="padding: 18px 24px; background: #9E8E75; border-top: none; display: flex; justify-content: space-between; align-items: center;">
+          <span style="font-family: var(--ff-ui); font-size: 11px; color: #1A1108;">Secondary text, metadata, captions</span>
+          <span style="font-family: var(--ff-ui); font-size: 10px; letter-spacing: 0.14em; color: #1A1108;">Driftwood</span>
+        </div>
+        <div style="padding: 18px 24px; background: #1A1108; display: flex; justify-content: space-between; align-items: center;">
+          <span style="font-family: var(--ff-ui); font-size: 11px; color: #D6C9B0;">Headlines, body text, primary mark</span>
+          <span style="font-family: var(--ff-ui); font-size: 10px; letter-spacing: 0.14em; color: #9E8E75;">Ink</span>
+        </div>
+        <div style="padding: 18px 24px; background: #3A6B3C; display: flex; justify-content: space-between; align-items: center;">
+          <span style="font-family: var(--ff-ui); font-size: 11px; color: #F5F0E8;">CTAs, interactive elements, links</span>
+          <span style="font-family: var(--ff-ui); font-size: 10px; letter-spacing: 0.14em; color: rgba(245,240,232,0.6);">Highway</span>
+        </div>
+        <div style="padding: 18px 24px; background: #8B5E3C; display: flex; justify-content: space-between; align-items: center;">
+          <span style="font-family: var(--ff-ui); font-size: 11px; color: #F5F0E8;">Interior accents, wood surfaces</span>
+          <span style="font-family: var(--ff-ui); font-size: 10px; letter-spacing: 0.14em; color: rgba(245,240,232,0.6);">Teak</span>
+        </div>
+        <div style="padding: 18px 24px; background: #A84B28; display: flex; justify-content: space-between; align-items: center;">
+          <span style="font-family: var(--ff-ui); font-size: 11px; color: #F5F0E8;">Events, seasonal moments, alerts</span>
+          <span style="font-family: var(--ff-ui); font-size: 10px; letter-spacing: 0.14em; color: rgba(245,240,232,0.6);">Terracotta</span>
+        </div>
+      </div>
+    </div>
+    <div>
+      <p style="font-family: var(--ff-ui); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--driftwood); margin-bottom: 32px;">Approved Pairings</p>
+      <div style="display: flex; flex-direction: column; gap: 12px;">
+        <div style="display: flex; gap: 0; height: 60px;">
+          <div style="flex: 1; background: #F5F0E8; display: flex; align-items: center; justify-content: center;">
+            <span style="font-family: var(--ff-ui); font-size: 10px; letter-spacing: 0.14em; color: #1A1108;">Ink on Cream</span>
+          </div>
+          <div style="width: 3px; background: var(--sand);"></div>
+          <div style="flex: 1; background: #1A1108; display: flex; align-items: center; justify-content: center;">
+            <span style="font-family: var(--ff-ui); font-size: 10px; letter-spacing: 0.14em; color: #F5F0E8;">Cream on Ink</span>
+          </div>
+        </div>
+        <div style="display: flex; gap: 0; height: 60px;">
+          <div style="flex: 1; background: #3A6B3C; display: flex; align-items: center; justify-content: center;">
+            <span style="font-family: var(--ff-ui); font-size: 10px; letter-spacing: 0.14em; color: #F5F0E8;">Cream on Highway</span>
+          </div>
+          <div style="width: 3px; background: var(--sand);"></div>
+          <div style="flex: 1; background: #EDE4D4; display: flex; align-items: center; justify-content: center;">
+            <span style="font-family: var(--ff-ui); font-size: 10px; letter-spacing: 0.14em; color: #3A6B3C;">Highway on Parchment</span>
+          </div>
+        </div>
+        <div style="display: flex; gap: 0; height: 60px;">
+          <div style="flex: 1; background: #8B5E3C; display: flex; align-items: center; justify-content: center;">
+            <span style="font-family: var(--ff-ui); font-size: 10px; letter-spacing: 0.14em; color: #F5F0E8;">Cream on Teak</span>
+          </div>
+          <div style="width: 3px; background: var(--sand);"></div>
+          <div style="flex: 1; background: #F5F0E8; display: flex; align-items: center; justify-content: center;">
+            <span style="font-family: var(--ff-ui); font-size: 10px; letter-spacing: 0.14em; color: #8B5E3C;">Teak on Cream</span>
+          </div>
+        </div>
+        <div style="display: flex; gap: 0; height: 60px;">
+          <div style="flex: 1; background: #A84B28; display: flex; align-items: center; justify-content: center;">
+            <span style="font-family: var(--ff-ui); font-size: 10px; letter-spacing: 0.14em; color: #F5F0E8;">Cream on Terracotta</span>
+          </div>
+          <div style="width: 3px; background: var(--sand);"></div>
+          <div style="flex: 1; background: #EDE4D4; display: flex; align-items: center; justify-content: center;">
+            <span style="font-family: var(--ff-ui); font-size: 10px; letter-spacing: 0.14em; color: #A84B28;">Terracotta on Parchment</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION: TYPOGRAPHY -->
+<section id="typography">
+  <p class="section-label">04 — Typography</p>
+  <h2 class="section-heading">Three voices,<br>one register.</h2>
+  <p class="section-body mt-24">
+    The type system balances old-world legibility with the spare clarity of California modernism. Playfair Display carries the brand's emotional weight in headlines and display use. Cormorant Garamond gives body copy an editorial, unhurried quality. Jost handles all functional UI moments with restraint.
+  </p>
+
+  <div class="type-specimen">
+    <div class="type-cell">
+      <p class="type-meta">Playfair Display · Display &amp; Headlines</p>
+      <div class="type-display-sample">Por la<br>mar.</div>
+      <div style="margin-top: 24px;">
+        <p style="font-family: var(--ff-ui); font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--driftwood); margin-bottom: 8px;">Weights in use</p>
+        <p style="font-family: 'Playfair Display', serif; font-size: 16px; color: var(--soil);">Regular 400 · <em>Italic 400</em> · <strong>Medium 500</strong></p>
+      </div>
+    </div>
+    <div class="type-cell" style="background: var(--ink);">
+      <p class="type-meta" style="color: #6B5C46;">Cormorant Garamond · Body &amp; Editorial</p>
+      <div class="type-body-sample" style="color: #F5F0E8; font-size: 20px; font-style: italic;">
+        "The road between Montecito and the sea is only a mile, but it earns itself."
+      </div>
+      <div style="margin-top: 24px;">
+        <p style="font-family: var(--ff-ui); font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase; color: #6B5C46; margin-bottom: 8px;">Weights in use</p>
+        <p style="font-family: 'Cormorant Garamond', serif; font-size: 16px; color: #9E8E75;">Light 300 · <em>Light Italic</em></p>
+      </div>
+    </div>
+    <div class="type-cell" style="grid-column: 1 / 3; min-height: 240px;">
+      <p class="type-meta">Jost · Interface &amp; Labels</p>
+      <div class="type-ui-sample" style="flex-direction: column; align-items: flex-start; gap: 16px;">
+        <span style="font-family: var(--ff-ui); font-size: 11px; letter-spacing: 0.32em; font-weight: 500;">POR LA MAR — SANTA BARBARA CAR CLUB — EST. 2025</span>
+        <span style="font-family: var(--ff-ui); font-size: 12px; letter-spacing: 0.18em; font-weight: 400;">Sunday Rally · Montecito · Members Only</span>
+        <span style="font-family: var(--ff-ui); font-size: 13px; letter-spacing: 0.08em; font-weight: 300;">Register your vehicle · Review club charter · Contact the board</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Type scale table -->
+  <table class="type-scale-table">
+    <thead>
+      <tr>
+        <td style="font-weight: 500; color: var(--soil);">Role</td>
+        <td style="font-weight: 500; color: var(--soil);">Typeface</td>
+        <td style="font-weight: 500; color: var(--soil);">Size</td>
+        <td style="font-weight: 500; color: var(--soil);">Weight</td>
+        <td style="font-weight: 500; color: var(--soil);" class="sample-col">Sample</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Hero</td>
+        <td>Playfair Display</td>
+        <td>72–96px</td>
+        <td>400 Italic</td>
+        <td class="sample-col"><span style="font-family: var(--ff-display); font-style: italic; font-size: 28px;">Por la mar.</span></td>
+      </tr>
+      <tr>
+        <td>H1</td>
+        <td>Playfair Display</td>
+        <td>48–60px</td>
+        <td>400</td>
+        <td class="sample-col"><span style="font-family: var(--ff-display); font-size: 24px;">Club Events</span></td>
+      </tr>
+      <tr>
+        <td>H2</td>
+        <td>Playfair Display</td>
+        <td>36px</td>
+        <td>400 Italic</td>
+        <td class="sample-col"><span style="font-family: var(--ff-display); font-style: italic; font-size: 20px;">This week's drives</span></td>
+      </tr>
+      <tr>
+        <td>H3</td>
+        <td>Playfair Display</td>
+        <td>24px</td>
+        <td>400</td>
+        <td class="sample-col"><span style="font-family: var(--ff-display); font-size: 16px;">Route Overview</span></td>
+      </tr>
+      <tr>
+        <td>Body</td>
+        <td>Cormorant Garamond</td>
+        <td>18–20px</td>
+        <td>300</td>
+        <td class="sample-col"><span style="font-family: var(--ff-body); font-size: 16px; font-weight: 300;">Members gather every Sunday at dawn.</span></td>
+      </tr>
+      <tr>
+        <td>Caption / Label</td>
+        <td>Jost</td>
+        <td>10–11px</td>
+        <td>500</td>
+        <td class="sample-col"><span style="font-family: var(--ff-ui); font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase;">Membership · Season 01</span></td>
+      </tr>
+      <tr>
+        <td>UI / Navigation</td>
+        <td>Jost</td>
+        <td>12–13px</td>
+        <td>300–400</td>
+        <td class="sample-col"><span style="font-family: var(--ff-ui); font-size: 13px; font-weight: 300;">Register your vehicle</span></td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- SECTION: VOICE -->
+<section id="voice">
+  <p class="section-label">05 — Voice &amp; Tone</p>
+  <h2 class="section-heading">Unhurried.<br>Honest. Present.</h2>
+  <p class="section-body mt-24">
+    Por La Mar does not shout. It does not perform exclusivity. It speaks like someone who knows the back roads: directly, warmly, without pretension. The tone is always grounded — luxury is implied through restraint, never claimed through excess.
+  </p>
+
+  <div class="voice-grid">
+    <div class="voice-card">
+      <p class="voice-card-title">Grounded</p>
+      <p class="voice-card-body">We don't talk about cars the way a magazine does. We talk about drives. About the hour before sunrise on East Valley Road, the kind of morning that justifies owning something with a flat-six.</p>
+      <div class="voice-examples">
+        <span class="pill pill-highway">Earned, not claimed</span>
+      </div>
+    </div>
+    <div class="voice-card">
+      <p class="voice-card-title">Inclusive</p>
+      <p class="voice-card-body">Whether you drive a vintage 911 or a daily Miata, you belong on the same road. Por La Mar is not curated by price point. It is curated by curiosity and care.</p>
+      <div class="voice-examples">
+        <span class="pill pill-highway">Open to all enthusiasts</span>
+      </div>
+    </div>
+    <div class="voice-card">
+      <p class="voice-card-title">Specific</p>
+      <p class="voice-card-body">We name the roads. We mention the café. The olive grove you pass at mile seven. Good writing about place is more luxury than any brand claim.</p>
+      <div class="voice-examples">
+        <span class="pill pill-highway">Named, concrete, vivid</span>
+      </div>
+    </div>
+    <div class="voice-card">
+      <p class="voice-card-title">Spare</p>
+      <p class="voice-card-body">White space is not emptiness. It is confidence. We do not fill every silence with copy. We say what needs saying and let the image — or the reader's imagination — do the rest.</p>
+      <div class="voice-examples">
+        <span class="pill pill-highway">Less is always more</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Do/don't language -->
+  <div class="two-col mt-64">
+    <div>
+      <p style="font-family: var(--ff-ui); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--highway); margin-bottom: 28px;">Write like this</p>
+      <div style="display: flex; flex-direction: column; gap: 16px;">
+        <div class="voice-example do">"Sunday morning. Pacific Coast Highway. Eight cars, no agenda."</div>
+        <div class="voice-example do">"Membership is open to anyone who takes the road seriously."</div>
+        <div class="voice-example do">"Join us this month on the Santa Ynez loop — 90 miles of the best asphalt in the county."</div>
+        <div class="voice-example do">"Reserved for members. Earned through showing up."</div>
+      </div>
+    </div>
+    <div>
+      <p style="font-family: var(--ff-ui); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--terracotta); margin-bottom: 28px;">Not like this</p>
+      <div style="display: flex; flex-direction: column; gap: 16px;">
+        <div class="voice-example dont">"Curated driving experiences for the discerning collector."</div>
+        <div class="voice-example dont">"Join an elite community of automotive aficionados."</div>
+        <div class="voice-example dont">"Experience the pinnacle of luxury motoring lifestyle."</div>
+        <div class="voice-example dont">"Por La Mar: Where passion meets performance. ®"</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="quote-block">
+    <div class="quote-mark">"</div>
+    <p class="quote-text">The best drives aren't about the car.<br>They're about the hour, the road, the people you find at the end of it.</p>
+    <p class="quote-attr">Brand Manifesto — Por La Mar</p>
+  </div>
+</section>
+
+<!-- SECTION: APPLICATIONS -->
+<section id="applications">
+  <p class="section-label">06 — Applications</p>
+  <h2 class="section-heading">How the brand lives<br>in the world.</h2>
+  <p class="section-body mt-24">
+    Every touchpoint — from membership card to event signage — should feel like it was found rather than manufactured. Natural materials, restrained production. Print on uncoated stock whenever possible.
+  </p>
+
+  <!-- Membership card -->
+  <div class="app-row">
+    <div class="app-mockup">
+      <div class="membership-card" style="background: var(--highway-deep);">
+        <div style="display:flex;align-items:center;justify-content:center;flex:1;">
+          <svg viewBox="0 0 665.21 665.21" width="80" height="80" xmlns="http://www.w3.org/2000/svg" ><g>
+      <path fill="#F5F0E8" d="M227.61,189.98l-8,5.8c-2.46,1.78-3.01,5.23-1.23,7.7l17.85,24.61c1.78,2.46,1.24,5.91-1.23,7.7l-8.46,6.14c-2.46,1.78-5.91,1.24-7.7-1.23l-75.3-103.82c-1.79-2.46-1.24-5.91,1.23-7.7l25.38-18.41c42.61-30.9,100.21,48.2,57.45,79.21ZM183.07,127.93l-8.31,6.02c-2.46,1.78-3.01,5.23-1.23,7.7l25.77,35.53c1.79,2.46,5.23,3.01,7.7,1.23l8.31-6.02c19.23-13.94-12.55-58.73-32.24-44.45Z"/>
+      <path fill="#F5F0E8" d="M288.88,175.65c-8.01-12.02-12.48-28.28-12.81-47.28s3.55-35.6,11.12-47.71c9.24-14.8,23.16-22.65,40.45-22.96,17.29-.31,31.48,7.04,41.24,21.5,8,11.83,12.48,28.28,12.82,47.28.34,19-3.55,35.41-11.12,47.71-9.24,14.61-23.16,22.46-40.45,22.76-17.29.31-31.48-7.04-41.24-21.31ZM297.53,127.99c.2,11.21,3.14,48.02,32.2,47.5,29.07-.52,30.69-37.41,30.49-48.62-.2-11.4-3.14-48.21-32.21-47.69-29.07.52-30.69,37.41-30.48,48.81Z"/>
+      <path fill="#F5F0E8" d="M460.85,195.11c-2.28.23-4.08,1.74-4.69,3.88l-11.01,38.49c-1.04,3.7-5.43,5.22-8.66,2.88l-8.77-6.36c-2-1.45-2.8-3.91-2.19-6.05l10.08-34.94c.61-2.14-.19-4.6-2.19-6.05-1.23-.89-3.08-2.23-6.15-4.46-2.46-1.78-5.91-1.24-7.69,1.23l-17.85,24.61c-1.78,2.46-5.23,3.01-7.7,1.23l-8.46-6.13c-2.46-1.78-3.01-5.23-1.23-7.7l75.29-103.82c1.78-2.46,5.23-3.01,7.7-1.23l25.38,18.4c34.45,24.99,3.74,81.57-31.87,86.02ZM438.66,157.43c-1.79,2.46-1.24,5.91,1.23,7.7l8.31,6.02c19.23,13.94,51.92-30.17,32.24-44.45l-8.31-6.02c-2.46-1.78-5.91-1.24-7.69,1.23l-25.77,35.53Z"/>
+    </g>
+    <g>
+      <path fill="#F5F0E8" d="M303.86,476.79c2.52,1.7,3.35,5.23,1.55,7.91l-71.36,106.1c-1.8,2.68-5.39,3.25-7.91,1.55l-8.51-5.73c-2.52-1.7-3.19-5.12-1.39-7.8l34.25-50.92c.64-.95.38-2.26-.3-2.95-.84-.79-2.1-.96-3.06-.22l-55.12,40.09c-1.9,1.47-4.64,1.46-6.54.18l-12.3-8.27c-2.05-1.38-2.94-3.81-2.29-6.12l16.34-66.17c.32-1.16-.31-2.27-1.36-2.75-1.05-.48-2.21-.11-2.85.83l-34.25,50.92c-1.8,2.68-5.39,3.25-7.91,1.55l-8.36-5.62c-2.68-1.8-3.35-5.23-1.55-7.91l71.36-106.1c1.8-2.68,5.23-3.35,7.91-1.55,2.68,1.8,6.15,4.14,10.88,7.32,2.05,1.38,2.94,3.81,2.29,6.12l-25.07,101.28c-.21,1,.25,2,1.04,2.53s1.89.59,2.58-.09l84.35-61.42c2.06-1.36,4.64-1.46,6.54-.18,4.89,3.29,8.2,5.51,11.04,7.42Z"/>
+      <path fill="#F5F0E8" d="M391.41,598.13c-1.11-2.73-3.04-7.47-6.39-15.86-1.06-2.36-3.35-3.79-5.99-3.46l-30.16,3.78c-2.64.33-4.5,2.29-4.95,4.83-.85,7-1.65,12.84-2.28,16.94-.45,2.55-2.31,4.5-4.76,4.81l-10.75,1.35c-3.58.45-6.65-2.61-6.15-6.31,4.04-28.85,15.19-109.52,18.2-131.34.26-2.52,2.31-4.5,4.76-4.81l13.57-1.7c2.45-.31,4.93,1.11,5.8,3.49,52.31,128.63,39.78,97.46,50.04,122.79,1.39,3.46-.82,7.19-4.4,7.64l-10.75,1.35c-2.45.31-4.74-1.13-5.8-3.49ZM354.69,560.22l13.2-1.65c3.58-.45,5.8-4.17,4.4-7.64-2.76-6.74-6.04-14.56-9.62-23.3-2-5.3-9.92-4.31-10.56,1.32-1.25,8.39-2.3,16.76-3.58,24.96-.49,3.7,2.57,6.76,6.15,6.31Z"/>
+      <path fill="#F5F0E8" d="M495.88,487.73c-.31,2.27.74,4.37,2.67,5.46l34.85,19.69c3.36,1.88,3.81,6.49.78,9.09l-8.23,7.04c-1.88,1.61-4.45,1.81-6.39.72l-31.62-17.95c-1.94-1.09-4.51-.89-6.39.72-1.15.99-2.89,2.47-5.77,4.94-2.31,1.98-2.58,5.46-.6,7.77l19.77,23.1c1.98,2.31,1.71,5.79-.6,7.77l-7.94,6.79c-2.31,1.98-5.79,1.71-7.77-.6l-83.39-97.43c-1.98-2.31-1.71-5.79.6-7.77l23.82-20.38c32.33-27.67,80.19,15.39,76.21,51.06ZM454.05,500.52c1.98,2.31,5.46,2.58,7.77.6l7.79-6.67c18.04-15.44-17.22-57.53-35.7-41.72l-7.79,6.67c-2.31,1.98-2.58,5.46-.6,7.77l28.54,33.34Z"/>
+    </g>
+    <g>
+      <path fill="#F5F0E8" d="M294.8,387.65c3.04,0,5.51,2.47,5.51,5.51v10.45c0,3.04-2.47,5.51-5.51,5.51h-52.44c-3.04,0-5.51-2.47-5.51-5.51v-128.25c0-3.04,2.47-5.51,5.51-5.51h10.45c3.04,0,5.51,2.47,5.51,5.51v106.78c0,3.04,2.47,5.51,5.51,5.51h30.97Z"/>
+      <path fill="#F5F0E8" d="M406.52,404.94c-.76-2.85-2.09-7.79-4.37-16.53-.76-2.47-2.85-4.18-5.51-4.18h-30.4c-2.66,0-4.75,1.71-5.51,4.18-1.71,6.84-3.23,12.54-4.37,16.53-.76,2.47-2.85,4.18-5.32,4.18h-10.83c-3.61,0-6.27-3.42-5.32-7.03,7.6-28.12,28.69-106.78,34.39-128.06.57-2.47,2.85-4.18,5.32-4.18h13.68c2.47,0,4.75,1.71,5.32,4.18,35.91,134.14,27.36,101.65,34.39,128.06.95,3.61-1.71,7.03-5.32,7.03h-10.83c-2.47,0-4.56-1.71-5.32-4.18ZM374.78,362.76h13.3c3.61,0,6.27-3.42,5.32-7.03-1.9-7.03-4.18-15.2-6.65-24.32-1.33-5.51-9.31-5.51-10.64,0-2.28,8.17-4.37,16.34-6.65,24.32-.95,3.61,1.71,7.03,5.32,7.03Z"/>
+    </g>
+    <circle stroke="#F5F0E8" fill="none" stroke-miterlimit="10" stroke-width="21.91" cx="332.6" cy="332.6" r="321.65"/></svg>
+        </div>
+        <div style="display:flex;justify-content:space-between;align-items:flex-end;">
+          <div>
+            <p class="card-member-name">Alejandro de la Vega</p>
+            <p class="card-member-label" style="margin-top:4px;opacity:0.45;">Founding Member</p>
+          </div>
+          <span class="card-number" style="padding-top:2px;">PLM · 0047</span>
+        </div></div>
+    </div>
+    <div class="app-desc">
+      <p class="app-title">Membership Card</p>
+      <p class="app-body">Printed on 700gsm uncoated cotton stock with a soft-touch laminate. The ink background and reversed mark signal membership without obvious luxury. Numbers are hand-stamped in the founding season.</p>
+      <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px;">
+        <span class="pill pill-bark">700gsm Cotton</span>
+        <span class="pill pill-bark">85 × 54mm</span>
+        <span class="pill pill-bark">Uncoated</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Signage -->
+  <div class="app-row" style="margin-top: 2px;">
+    <div class="app-desc">
+      <p class="app-title">Event Signage</p>
+      <p class="app-body">For rallies and meetups, signage is minimal and tactile: wood-routed panels, hand-lettered chalk boards, or printed on unbleached kraft. No vinyl banners. No pop-up displays.</p>
+      <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px;">
+        <span class="pill pill-bark">Routed Wood</span>
+        <span class="pill pill-bark">Kraft Paper</span>
+        <span class="pill pill-bark">Blackboard</span>
+      </div>
+    </div>
+    <div class="app-mockup" style="background: var(--ink);">
+      <div class="signage-mock" style="background: #3D2F20; border-color: #6B5C46;">
+        <svg class="signage-logo" viewBox="0 0 665.21 665.21" width="100" height="100" xmlns="http://www.w3.org/2000/svg" ><g>
+      <path fill="#D6C9B0" d="M227.61,189.98l-8,5.8c-2.46,1.78-3.01,5.23-1.23,7.7l17.85,24.61c1.78,2.46,1.24,5.91-1.23,7.7l-8.46,6.14c-2.46,1.78-5.91,1.24-7.7-1.23l-75.3-103.82c-1.79-2.46-1.24-5.91,1.23-7.7l25.38-18.41c42.61-30.9,100.21,48.2,57.45,79.21ZM183.07,127.93l-8.31,6.02c-2.46,1.78-3.01,5.23-1.23,7.7l25.77,35.53c1.79,2.46,5.23,3.01,7.7,1.23l8.31-6.02c19.23-13.94-12.55-58.73-32.24-44.45Z"/>
+      <path fill="#D6C9B0" d="M288.88,175.65c-8.01-12.02-12.48-28.28-12.81-47.28s3.55-35.6,11.12-47.71c9.24-14.8,23.16-22.65,40.45-22.96,17.29-.31,31.48,7.04,41.24,21.5,8,11.83,12.48,28.28,12.82,47.28.34,19-3.55,35.41-11.12,47.71-9.24,14.61-23.16,22.46-40.45,22.76-17.29.31-31.48-7.04-41.24-21.31ZM297.53,127.99c.2,11.21,3.14,48.02,32.2,47.5,29.07-.52,30.69-37.41,30.49-48.62-.2-11.4-3.14-48.21-32.21-47.69-29.07.52-30.69,37.41-30.48,48.81Z"/>
+      <path fill="#D6C9B0" d="M460.85,195.11c-2.28.23-4.08,1.74-4.69,3.88l-11.01,38.49c-1.04,3.7-5.43,5.22-8.66,2.88l-8.77-6.36c-2-1.45-2.8-3.91-2.19-6.05l10.08-34.94c.61-2.14-.19-4.6-2.19-6.05-1.23-.89-3.08-2.23-6.15-4.46-2.46-1.78-5.91-1.24-7.69,1.23l-17.85,24.61c-1.78,2.46-5.23,3.01-7.7,1.23l-8.46-6.13c-2.46-1.78-3.01-5.23-1.23-7.7l75.29-103.82c1.78-2.46,5.23-3.01,7.7-1.23l25.38,18.4c34.45,24.99,3.74,81.57-31.87,86.02ZM438.66,157.43c-1.79,2.46-1.24,5.91,1.23,7.7l8.31,6.02c19.23,13.94,51.92-30.17,32.24-44.45l-8.31-6.02c-2.46-1.78-5.91-1.24-7.69,1.23l-25.77,35.53Z"/>
+    </g>
+    <g>
+      <path fill="#D6C9B0" d="M303.86,476.79c2.52,1.7,3.35,5.23,1.55,7.91l-71.36,106.1c-1.8,2.68-5.39,3.25-7.91,1.55l-8.51-5.73c-2.52-1.7-3.19-5.12-1.39-7.8l34.25-50.92c.64-.95.38-2.26-.3-2.95-.84-.79-2.1-.96-3.06-.22l-55.12,40.09c-1.9,1.47-4.64,1.46-6.54.18l-12.3-8.27c-2.05-1.38-2.94-3.81-2.29-6.12l16.34-66.17c.32-1.16-.31-2.27-1.36-2.75-1.05-.48-2.21-.11-2.85.83l-34.25,50.92c-1.8,2.68-5.39,3.25-7.91,1.55l-8.36-5.62c-2.68-1.8-3.35-5.23-1.55-7.91l71.36-106.1c1.8-2.68,5.23-3.35,7.91-1.55,2.68,1.8,6.15,4.14,10.88,7.32,2.05,1.38,2.94,3.81,2.29,6.12l-25.07,101.28c-.21,1,.25,2,1.04,2.53s1.89.59,2.58-.09l84.35-61.42c2.06-1.36,4.64-1.46,6.54-.18,4.89,3.29,8.2,5.51,11.04,7.42Z"/>
+      <path fill="#D6C9B0" d="M391.41,598.13c-1.11-2.73-3.04-7.47-6.39-15.86-1.06-2.36-3.35-3.79-5.99-3.46l-30.16,3.78c-2.64.33-4.5,2.29-4.95,4.83-.85,7-1.65,12.84-2.28,16.94-.45,2.55-2.31,4.5-4.76,4.81l-10.75,1.35c-3.58.45-6.65-2.61-6.15-6.31,4.04-28.85,15.19-109.52,18.2-131.34.26-2.52,2.31-4.5,4.76-4.81l13.57-1.7c2.45-.31,4.93,1.11,5.8,3.49,52.31,128.63,39.78,97.46,50.04,122.79,1.39,3.46-.82,7.19-4.4,7.64l-10.75,1.35c-2.45.31-4.74-1.13-5.8-3.49ZM354.69,560.22l13.2-1.65c3.58-.45,5.8-4.17,4.4-7.64-2.76-6.74-6.04-14.56-9.62-23.3-2-5.3-9.92-4.31-10.56,1.32-1.25,8.39-2.3,16.76-3.58,24.96-.49,3.7,2.57,6.76,6.15,6.31Z"/>
+      <path fill="#D6C9B0" d="M495.88,487.73c-.31,2.27.74,4.37,2.67,5.46l34.85,19.69c3.36,1.88,3.81,6.49.78,9.09l-8.23,7.04c-1.88,1.61-4.45,1.81-6.39.72l-31.62-17.95c-1.94-1.09-4.51-.89-6.39.72-1.15.99-2.89,2.47-5.77,4.94-2.31,1.98-2.58,5.46-.6,7.77l19.77,23.1c1.98,2.31,1.71,5.79-.6,7.77l-7.94,6.79c-2.31,1.98-5.79,1.71-7.77-.6l-83.39-97.43c-1.98-2.31-1.71-5.79.6-7.77l23.82-20.38c32.33-27.67,80.19,15.39,76.21,51.06ZM454.05,500.52c1.98,2.31,5.46,2.58,7.77.6l7.79-6.67c18.04-15.44-17.22-57.53-35.7-41.72l-7.79,6.67c-2.31,1.98-2.58,5.46-.6,7.77l28.54,33.34Z"/>
+    </g>
+    <g>
+      <path fill="#D6C9B0" d="M294.8,387.65c3.04,0,5.51,2.47,5.51,5.51v10.45c0,3.04-2.47,5.51-5.51,5.51h-52.44c-3.04,0-5.51-2.47-5.51-5.51v-128.25c0-3.04,2.47-5.51,5.51-5.51h10.45c3.04,0,5.51,2.47,5.51,5.51v106.78c0,3.04,2.47,5.51,5.51,5.51h30.97Z"/>
+      <path fill="#D6C9B0" d="M406.52,404.94c-.76-2.85-2.09-7.79-4.37-16.53-.76-2.47-2.85-4.18-5.51-4.18h-30.4c-2.66,0-4.75,1.71-5.51,4.18-1.71,6.84-3.23,12.54-4.37,16.53-.76,2.47-2.85,4.18-5.32,4.18h-10.83c-3.61,0-6.27-3.42-5.32-7.03,7.6-28.12,28.69-106.78,34.39-128.06.57-2.47,2.85-4.18,5.32-4.18h13.68c2.47,0,4.75,1.71,5.32,4.18,35.91,134.14,27.36,101.65,34.39,128.06.95,3.61-1.71,7.03-5.32,7.03h-10.83c-2.47,0-4.56-1.71-5.32-4.18ZM374.78,362.76h13.3c3.61,0,6.27-3.42,5.32-7.03-1.9-7.03-4.18-15.2-6.65-24.32-1.33-5.51-9.31-5.51-10.64,0-2.28,8.17-4.37,16.34-6.65,24.32-.95,3.61,1.71,7.03,5.32,7.03Z"/>
+    </g>
+    <circle stroke="#D6C9B0" fill="none" stroke-miterlimit="10" stroke-width="21.91" cx="332.6" cy="332.6" r="321.65"/></svg>
+        <div class="signage-divider"></div>
+        <p class="signage-address" style="color: #9E8E75;">
+          Sunday Morning Rally<br>
+          East Valley Road<br>
+          Santa Barbara
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Digital / Web -->
+  <div class="app-row" style="margin-top: 2px;">
+    <div class="app-mockup" style="flex-direction: column; gap: 0; padding: 0; overflow: hidden;">
+      <!-- mini web mockup -->
+      <div style="background: #F5F0E8; width: 100%; padding: 20px 28px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--sand);">
+        <span style="font-family: var(--ff-ui); font-size: 9px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--bark);">Por La Mar</span>
+        <div style="display: flex; gap: 24px;">
+          <span style="font-family: var(--ff-ui); font-size: 9px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--driftwood);">Routes</span>
+          <span style="font-family: var(--ff-ui); font-size: 9px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--driftwood);">Events</span>
+          <span style="font-family: var(--ff-ui); font-size: 9px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--driftwood);">Members</span>
+        </div>
+      </div>
+      <div style="flex: 1; background: var(--parchment); padding: 40px 28px; display: flex; flex-direction: column; justify-content: center; gap: 16px;">
+        <span style="font-family: var(--ff-ui); font-size: 8px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--highway);">Upcoming · April 6</span>
+        <p style="font-family: var(--ff-display); font-size: 28px; font-style: italic; color: var(--ink); line-height: 1.15;">Santa Ynez<br>Morning Drive</p>
+        <p style="font-family: var(--ff-body); font-size: 14px; font-weight: 300; color: var(--bark); line-height: 1.65;">90 miles through wine country. Depart from Montecito at 6:45am. All makes welcome.</p>
+        <div style="margin-top: 8px;">
+          <span style="font-family: var(--ff-ui); font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--highway); border-bottom: 1px solid var(--highway); padding-bottom: 2px;">Register →</span>
+        </div>
+      </div>
+    </div>
+    <div class="app-desc">
+      <p class="app-title">Digital Presence</p>
+      <p class="app-body">The website and app carry the same restraint as print. Full-bleed photography with minimal typographic overlays. No hover animations that distract from the content. Navigation in Jost, all uppercase and spaced wide.</p>
+      <p class="app-body mt-16">Sea and terracotta are used exclusively for interactive elements and calls to action — never decoratively.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION: PHOTOGRAPHY -->
+<section id="photography">
+  <p class="section-label">07 — Photography Direction</p>
+  <h2 class="section-heading">Light before 9am<br>and after 5pm.</h2>
+  <p class="section-body mt-24">
+    Photography should feel discovered, not staged. Early morning or late afternoon light only — the "magic hours" that flatten shadows and warm surfaces. Cars are incidental to landscape; the road is always more important than the machine on it.
+  </p>
+
+  <!-- Photo grid — verified free Unsplash photographs -->
+  <div class="photo-grid" style="gap: 4px;">
+
+    <div class="photo-cell span-col" style="position:relative;overflow:hidden;background:#1A1A14;min-height:520px;">
+      <img src="https://images.unsplash.com/photo-1499678329028-101435549a4e?auto=format&fit=crop&q=80&w=1400" alt="Coastal road California" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;filter:sepia(15%) saturate(85%) brightness(0.88);">
+      <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(14,13,11,0.65) 0%,transparent 50%);pointer-events:none;"></div>
+      <span class="photo-cell-tag" style="position:absolute;bottom:20px;left:20px;color:rgba(245,240,232,0.75);">The road as subject — landscape over machine</span>
+    </div>
+
+    <div class="photo-cell" style="position:relative;overflow:hidden;background:#141A10;">
+      <img src="https://images.unsplash.com/photo-1686861598799-40a6a8c778fa?auto=format&fit=crop&q=80&w=800" alt="California green hills ocean" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;filter:sepia(20%) saturate(80%) brightness(0.88);">
+      <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(14,13,11,0.6) 0%,transparent 55%);pointer-events:none;"></div>
+      <span class="photo-cell-tag" style="position:absolute;bottom:20px;left:20px;color:rgba(245,240,232,0.7);">Golden light, every time</span>
+    </div>
+
+    <div class="photo-cell" style="position:relative;overflow:hidden;background:#14100A;">
+      <img src="https://images.unsplash.com/photo-1715733966749-6af454716d83?auto=format&fit=crop&q=80&w=800" alt="Classic car detail" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;filter:sepia(25%) saturate(75%) brightness(0.85);">
+      <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(14,13,11,0.6) 0%,transparent 55%);pointer-events:none;"></div>
+      <span class="photo-cell-tag" style="position:absolute;bottom:20px;left:20px;color:rgba(245,240,232,0.7);">Cars as details, not centerpieces</span>
+    </div>
+
+    <div class="photo-cell" style="position:relative;overflow:hidden;background:#10141A;">
+      <img src="https://images.unsplash.com/photo-1654209831275-b7acb9d89e20?auto=format&fit=crop&q=80&w=800" alt="People on California beach" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;filter:sepia(18%) saturate(80%) brightness(0.88);">
+      <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(14,13,11,0.6) 0%,transparent 55%);pointer-events:none;"></div>
+      <span class="photo-cell-tag" style="position:absolute;bottom:20px;left:20px;color:rgba(245,240,232,0.7);">Community over collection</span>
+    </div>
+
+    <div class="photo-cell" style="position:relative;overflow:hidden;background:#14100A;">
+      <img src="https://images.unsplash.com/photo-1608457543170-bac3c080f277?auto=format&fit=crop&q=80&w=800" alt="Rocks at golden sunset coast" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;object-position:center 30%;filter:sepia(20%) saturate(80%) brightness(0.85);">
+      <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(14,13,11,0.6) 0%,transparent 55%);pointer-events:none;"></div>
+      <span class="photo-cell-tag" style="position:absolute;bottom:20px;left:20px;color:rgba(245,240,232,0.7);">Place before everything</span>
+    </div>
+
+  </div>
+
+  <!-- Film treatment note -->
+  <div style="margin-top: 20px; padding: 20px 28px; background: var(--parchment); display: flex; align-items: center; gap: 20px;">
+    <span style="font-family: var(--ff-ui); font-size: 9px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--driftwood);">Treatment</span>
+    <span style="font-family: var(--ff-body); font-size: 15px; font-weight: 300; color: var(--bark); font-style: italic;">All images: slight sepia shift (+15%), reduced saturation (−20%), lifted shadows. Analog warmth without Instagram filter.</span>
+  </div>
+
+  <div class="three-col" style="margin-top: 64px;">
+    <div style="padding: 0;">
+      <p style="font-family: var(--ff-ui); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--highway); margin-bottom: 16px;">Always</p>
+      <ul style="font-family: var(--ff-body); font-size: 16px; font-weight: 300; color: var(--soil); line-height: 2; padding-left: 16px; list-style: none;">
+        <li>— Magic hour light only</li>
+        <li>— Landscape-dominant framing</li>
+        <li>— Film grain or analog processing</li>
+        <li>— Natural materials in environment</li>
+        <li>— Candid, unposed moments</li>
+        <li>— Desaturated, warm-shifted color grade</li>
+      </ul>
+    </div>
+    <div>
+      <p style="font-family: var(--ff-ui); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--terracotta); margin-bottom: 16px;">Never</p>
+      <ul style="font-family: var(--ff-body); font-size: 16px; font-weight: 300; color: var(--terracotta); line-height: 2; padding-left: 16px; list-style: none; opacity: 0.8;">
+        <li>— Studio lighting</li>
+        <li>— Cars on white backgrounds</li>
+        <li>— Motion blur on wheels</li>
+        <li>— HDR or oversaturated edits</li>
+        <li>— Track or garage settings alone</li>
+        <li>— Posed "hero shots"</li>
+      </ul>
+    </div>
+    <div>
+      <p style="font-family: var(--ff-ui); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--driftwood); margin-bottom: 16px;">Reference</p>
+      <ul style="font-family: var(--ff-body); font-size: 16px; font-weight: 300; color: var(--bark); line-height: 2; padding-left: 16px; list-style: none;">
+        <li>— Slim Aarons (people + place)</li>
+        <li>— Pete Eckert (abstraction)</li>
+        <li>— Road &amp; Track circa 1970</li>
+        <li>— Condé Nast Traveler editorial</li>
+        <li>— Wim Wenders still frames</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <span class="footer-logo">Por La Mar · Brand Identity System</span>
+  <span class="footer-copy">Confidential · Internal Use · 2025</span>
+</footer>
+
+</body>
+</html>
